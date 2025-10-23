@@ -99,6 +99,7 @@ export default function Hero() {
         <StudyGoals />
         <ExplorePrograms />
         <TopUniversities />
+      
         <TopColleges />
       </section>
     </>

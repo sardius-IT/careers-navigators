@@ -1,141 +1,117 @@
 "use client";
-import Navbar from "./../../components/Navbar";
+
 import { useState } from "react";
 import Image from "next/image";
 import { MapPin } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const colleges = [
-  // === Tamil Nadu Engineering Colleges ===
   {
-    name: "Indian Institute of Technology Madras (IIT Madras)",
+    name: "Academy of Maritime Education and Training",
     state: "Tamil Nadu",
     city: "Chennai",
-    type: "Engineering",
-    image: "/colleges/iitm.jpg",
+    image: "/colleges/amet.jpg",
   },
   {
-    name: "Vellore Institute of Technology (VIT)",
+    name: "Amrita Vishwa Vidyapeetham",
     state: "Tamil Nadu",
-    city: "Vellore",
-    type: "Engineering",
-    image: "/colleges/vit.jpg",
+    city: "Coimbatore",
+    image: "/colleges/amrita.jpg",
   },
   {
-    name: "SRM Institute of Science and Technology",
+    name: "Avinashilingam Institute for Home Science & Higher Education for Women",
     state: "Tamil Nadu",
-    city: "Kattankulathur",
-    type: "Engineering",
-    image: "/colleges/srm.jpg",
+    city: "Coimbatore",
+    image: "/colleges/avinashilingam.jpg",
   },
-
-  // === Bangalore Engineering Colleges ===
   {
-    name: "R.V. College of Engineering",
+    name: "B.S. Abdur Rahman Institute of Science and Technology",
+    state: "Tamil Nadu",
+    city: "Chennai",
+    image: "/colleges/bsabdur.jpg",
+  },
+  {
+    name: "Bharath Institute of Higher Education & Research",
+    state: "Tamil Nadu",
+    city: "Chennai",
+    image: "/colleges/bharath.jpg",
+  },
+  {
+    name: "Chennai Mathematical Institute",
+    state: "Tamil Nadu",
+    city: "Chennai",
+    image: "/colleges/cmi.jpg",
+  },
+  {
+    name: "Christ University",
     state: "Bangalore",
     city: "Bangalore",
-    type: "Engineering",
-    image: "/colleges/rvce.jpg",
+    image: "/colleges/christ.jpg",
   },
   {
-    name: "BMS College of Engineering",
+    name: "St. Joseph’s College of Engineering",
     state: "Bangalore",
     city: "Bangalore",
-    type: "Engineering",
-    image: "/colleges/bms.jpg",
-  },
-  {
-    name: "PES University",
-    state: "Bangalore",
-    city: "Bangalore",
-    type: "Engineering",
-    image: "/colleges/pes.jpg",
-  },
-
-  // === Maharashtra Engineering Colleges ===
-  {
-    name: "Indian Institute of Technology Bombay (IIT Bombay)",
-    state: "Maharashtra",
-    city: "Mumbai",
-    type: "Engineering",
-    image: "/colleges/iitb.jpg",
-  },
-  {
-    name: "College of Engineering Pune (COEP)",
-    state: "Maharashtra",
-    city: "Pune",
-    type: "Engineering",
-    image: "/colleges/coep.jpg",
-  },
-  {
-    name: "VJTI (Veermata Jijabai Technological Institute)",
-    state: "Maharashtra",
-    city: "Mumbai",
-    type: "Engineering",
-    image: "/colleges/vjti.jpg",
+    image: "/colleges/stjoseph.jpg",
   },
 ];
 
 const states = [
   "Tamil Nadu",
   "Bangalore",
+  "Andhra Pradesh",
   "Maharashtra",
   "Kerala",
-  "Andhra Pradesh",
+  "Madhya Pradesh",
   "Gujarat",
   "Telangana",
-  "Madhya Pradesh",
   "Odisha",
+  "Arunachal Pradesh",
   "West Bengal",
   "Uttar Pradesh",
 ];
 
-export default function TopUniversities() {
+export default function TopColleges() {
   const [selectedState, setSelectedState] = useState("Tamil Nadu");
 
-  // Filter by both state and engineering type
   const filteredColleges = colleges.filter(
-    (college) =>
-      college.state === selectedState && college.type === "Engineering"
+    (college) => college.state === selectedState
   );
 
   const fadeUp = {
-    hidden: { opacity: 0, y: 30 },
-    show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+    hidden: { opacity: 0, y: 40 },
+    show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
   };
 
   return (
-    <>
-     <Navbar/>
     <div className="min-h-screen bg-gradient-to-b from-blue-50 to-indigo-100 py-10 px-4">
-     
-      {/* Page Title */}
+      {/* Title */}
       <motion.h2
         initial={{ opacity: 0, y: -30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7 }}
-        className="text-3xl md:text-4xl font-extrabold text-center  mb-10"
+        className="text-3xl md:text-4xl font-extrabold text-center text-blue-700 mb-8"
       >
-        Discover Top Engineering Colleges in India
+        Discover Our Top Colleges
       </motion.h2>
 
-      {/* State Filter Buttons */}
+      {/* State Buttons */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 0.3 }}
+        transition={{ delay: 0.4 }}
         className="flex flex-wrap justify-center gap-3 mb-10"
       >
         {states.map((state) => (
           <motion.button
             key={state}
-            whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
+            whileHover={{ scale: 1.05 }}
             onClick={() => setSelectedState(state)}
-            className={`px-5 py-2 rounded-full text-sm font-semibold transition-all duration-300 ${
+            className={`px-5 py-2.5 rounded-full text-sm font-semibold backdrop-blur-md border transition-all duration-300 ${
               selectedState === state
-                ? "bg-blue-600 text-white shadow-md"
-                : "bg-white text-gray-700 hover:bg-blue-100"
+                ? "bg-blue-600 text-white shadow-lg"
+                : "bg-white/60 text-gray-700 hover:bg-blue-100"
             }`}
           >
             {state}
@@ -149,14 +125,15 @@ export default function TopUniversities() {
         className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto"
       >
         <AnimatePresence>
-          {filteredColleges.map((college, index) => (
+          {filteredColleges.map((college, idx) => (
             <motion.div
               key={college.name}
+              layout
               variants={fadeUp}
               initial="hidden"
               animate="show"
-              exit={{ opacity: 0, scale: 0.95 }}
-              transition={{ delay: index * 0.1 }}
+              exit={{ opacity: 0, scale: 0.9 }}
+              transition={{ delay: idx * 0.1 }}
               className="bg-white/80 backdrop-blur-md rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300"
             >
               <div className="relative h-48 w-full">
@@ -170,7 +147,7 @@ export default function TopUniversities() {
 
               <div className="p-4">
                 <span className="text-green-600 text-sm font-semibold">
-                  ● Engineering College
+                  ● Available
                 </span>
                 <h3 className="text-lg font-semibold mt-1 text-gray-800">
                   {college.name}
@@ -185,18 +162,6 @@ export default function TopUniversities() {
           ))}
         </AnimatePresence>
       </motion.div>
-
-      {filteredColleges.length === 0 && (
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          className="text-center text-gray-500 mt-6"
-        >
-          No engineering colleges found for this state.
-        </motion.p>
-      )}
     </div>
-    </>
   );
 }
-
