@@ -33,12 +33,19 @@ export default function Navbar() {
 
   return (
     <>
-      <header className="w-full bg-white rounded-2xl shadow-2xl sticky top-0 z-[100]">
+      <header className="w-full bg-white  shadow-2xl sticky top-0 z-[100]">
         <div className="flex items-center justify-between px-6 py-4">
           {/* Logo */}
-          <div className="flex items-center gap-2">
-            <img src="/logo.png" alt="Logo" className="h-12 object-contain" />
-          </div>
+         <div className="flex items-center gap-2">
+  <Link href="/hero" className="cursor-pointer">
+    <img
+      src="/logo.png"
+      alt="Logo"
+      className="h-12 object-contain hover:opacity-80 transition-opacity"
+    />
+  </Link>
+</div>
+
 
           {/* Desktop Menu */}
           <div className="hidden md:flex gap-3 text-sm">
