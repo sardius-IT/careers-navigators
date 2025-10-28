@@ -28,7 +28,7 @@ export default function RegisterPopup() {
 📱 Phone: ${phone}%0A
 🏙️ City: ${city}%0A
 🎓 Course: ${course}`;
-    const whatsappNumber = "918897537334";
+    const whatsappNumber = "919543788999";
     window.open(`https://wa.me/${whatsappNumber}?text=${msg}`, "_blank");
   };
 

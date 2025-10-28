@@ -45,7 +45,7 @@ export default function BookCallPage() {
 🎓 Looking for College: ${collegeName}`;
 
     // 🔹 Your WhatsApp number (with country code, no + or spaces)
-    const adminNumber = "918897537334"; // <-- Replace with your number
+    const adminNumber = "919543788999"; // <-- Replace with your number
 
     // 🔹 Open WhatsApp chat with pre-filled message
     const whatsappURL = `https://wa.me/${adminNumber}?text=${encodeURIComponent(
