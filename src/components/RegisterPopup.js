@@ -1,6 +1,19 @@
 "use client";
 import { useState, useEffect } from "react";
-import { X, FileText, CreditCard, CheckCircle2, Headphones, Landmark, CalendarDays, User, Mail, Phone, MapPin, GraduationCap } from "lucide-react";
+import {
+  X,
+  FileText,
+  CreditCard,
+  CheckCircle2,
+  Headphones,
+  Landmark,
+  CalendarDays,
+  User,
+  Mail,
+  Phone,
+  MapPin,
+  GraduationCap,
+} from "lucide-react";
 
 export default function RegisterPopup() {
   const [show, setShow] = useState(false);
@@ -35,8 +48,11 @@ export default function RegisterPopup() {
   if (!show) return null;
 
   return (
-    <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-5">
-      <div className="bg-white rounded-2xl shadow-2xl w-[90%] max-w-[750px] relative overflow-hidden flex flex-col md:flex-row animate-fadeIn">
+    <div className="fixed inset-0 bg-black/50 flex items-end md:items-center justify-center z-50 p-4 md:p-8 pb-[100px] md:pb-0">
+      <div
+        className="bg-white rounded-2xl shadow-2xl w-full max-w-[750px] relative overflow-hidden flex flex-col md:flex-row animate-fadeIn"
+        style={{ animation: "fadeIn 0.3s ease-in-out" }}
+      >
         {/* Close Button */}
         <button
           onClick={() => setShow(false)}
@@ -46,7 +62,7 @@ export default function RegisterPopup() {
         </button>
 
         {/* Left Section */}
-        <div className="bg-gray-50 w-full md:w-1/2 p-6 flex flex-col justify-center border-r">
+        <div className="bg-gray-50 w-full md:w-1/2 p-6 flex flex-col justify-center border-b md:border-b-0 md:border-r">
           <h3 className="text-lg font-bold text-gray-800 mb-4 text-center md:text-left">
             How We Help You
           </h3>
@@ -73,11 +89,12 @@ export default function RegisterPopup() {
         </div>
 
         {/* Right Section */}
-        <div className="w-full md:w-1/2 p-6">
+        <div className="w-full md:w-1/2 p-6 bg-white">
           <h3 className="text-lg font-bold text-gray-800 mb-4 text-center md:text-left">
             Register Now to Apply
           </h3>
           <form onSubmit={handleSubmit} className="space-y-3">
+            {/* Name */}
             <div className="flex items-center border rounded-md px-3 py-2">
               <User size={16} className="text-gray-400 mr-2" />
               <input
@@ -91,6 +108,7 @@ export default function RegisterPopup() {
               />
             </div>
 
+            {/* Email */}
             <div className="flex items-center border rounded-md px-3 py-2">
               <Mail size={16} className="text-gray-400 mr-2" />
               <input
@@ -104,6 +122,7 @@ export default function RegisterPopup() {
               />
             </div>
 
+            {/* Phone */}
             <div className="flex items-center border rounded-md px-3 py-2">
               <Phone size={16} className="text-gray-400 mr-2" />
               <input
@@ -117,6 +136,7 @@ export default function RegisterPopup() {
               />
             </div>
 
+            {/* City */}
             <div className="flex items-center border rounded-md px-3 py-2">
               <MapPin size={16} className="text-gray-400 mr-2" />
               <input
@@ -130,6 +150,7 @@ export default function RegisterPopup() {
               />
             </div>
 
+            {/* Course */}
             <div className="flex items-center border rounded-md px-3 py-2">
               <GraduationCap size={16} className="text-gray-400 mr-2" />
               <input
@@ -159,6 +180,19 @@ export default function RegisterPopup() {
           </form>
         </div>
       </div>
+
+      <style jsx>{`
+        @keyframes fadeIn {
+          from {
+            opacity: 0;
+            transform: translateY(30px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+      `}</style>
     </div>
   );
 }
