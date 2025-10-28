@@ -33,32 +33,33 @@ export default function Hero() {
 
   // Typing effect logic
   useEffect(() => {
-    let charIndex = 0;
-    let forward = true;
-    let textIndex = 0;
+  let charIndex = 0;
+  let forward = true;
+  let textIndex = 0;
 
-    const typingInterval = setInterval(() => {
-      if (forward) {
-        if (charIndex < texts[textIndex].length) {
-          setDisplayText(texts[textIndex].substring(0, charIndex + 1));
-          charIndex++;
-        } else {
-          forward = false;
-          setTimeout(() => {}, 1500);
-        }
+  const typingInterval = setInterval(() => {
+    if (forward) {
+      if (charIndex < texts[textIndex].length) {
+        setDisplayText(texts[textIndex].substring(0, charIndex + 1));
+        charIndex++;
       } else {
-        if (charIndex > 0) {
-          setDisplayText(texts[textIndex].substring(0, charIndex - 1));
-          charIndex--;
-        } else {
-          forward = true;
-          textIndex = (textIndex + 1) % texts.length;
-        }
+        forward = false;
+        setTimeout(() => {}, 1500);
       }
-    }, 120); // typing speed
+    } else {
+      if (charIndex > 0) {
+        setDisplayText(texts[textIndex].substring(0, charIndex - 1));
+        charIndex--;
+      } else {
+        forward = true;
+        textIndex = (textIndex + 1) % texts.length;
+      }
+    }
+  }, 120);
 
-    return () => clearInterval(typingInterval);
-  }, []);
+  return () => clearInterval(typingInterval);
+}, [texts]);
+
 
   return (
     <>

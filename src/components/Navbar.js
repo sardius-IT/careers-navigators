@@ -38,7 +38,7 @@ export default function Navbar() {
           {/* Logo */}
          <div className="flex items-center gap-2">
   <Link href="/hero" className="cursor-pointer">
-    <img
+    <Image
       src="/logo.png"
       alt="Logo"
       className="h-12 object-contain hover:opacity-80 transition-opacity"
