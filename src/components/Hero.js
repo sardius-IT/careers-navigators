@@ -7,6 +7,7 @@ import StudyGoals from "../app/StudyGoals/page";
 import ExplorePrograms from "../app/ExplorePrograms/page";
 import TopUniversities from "../app/TopUniversities/page";
 import TopColleges from "../app/TopColleges/page";
+import NewsletterSection from "../app/NewsletterSection/page";
 export default function Hero() {
   // 👇 Add multiple background images
   const images = [
@@ -108,6 +109,12 @@ export default function Hero() {
         <TopUniversities />
       
         <TopColleges />
+         <section className="bg-green-50 py-10 text-center rounded-xl shadow-inner max-w-4xl mx-auto mb-10 px-4">
+        <h3 className="text-2xl font-bold text-green-800 mb-3">HelpDesk</h3>
+        <p>📞 +91 9155234444 | 📧 admissions@irst.edu.in</p>
+        <p>Support Hours: Mon–Sat | 9:00 AM – 5:00 PM</p>
+      </section>
+        <NewsletterSection />
       </section>
     </>
   );
