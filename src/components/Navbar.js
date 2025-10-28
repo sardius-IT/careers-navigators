@@ -150,7 +150,7 @@ export default function Navbar() {
               onClick={(e) => e.stopPropagation()}
             >
               <div className="flex justify-between items-center mb-4">
-                <img src="/logo.png" alt="Logo" className="h-10" />
+                <Image src="/logo.png" alt="Logo" className="h-10" />
                 <X
                   size={24}
                   className="cursor-pointer hover:text-red-500"
