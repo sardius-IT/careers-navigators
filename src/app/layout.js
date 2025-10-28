@@ -12,12 +12,18 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Carees-Navigators|Discover Top colleges,Global Career Opportunities&Academic success",
-  description: "Career Navigator|Discover Top colleges,Global Career Opportunities&Academic success",
+  title: "Career Navigators | Discover Top Colleges, Global Career Opportunities & Academic Success",
+  description: "Career Navigator helps you explore colleges, courses, scholarships, and build a global career path.",
   icons: {
-    icon: "/logo-removebg-preview.png", // 👈 path inside /public
+    icon: [
+      { url: "/logo-removebg-preview.png", type: "image/png" },
+    ],
+    shortcut: ["/logo-removebg-preview.png"],
+    apple: ["/logo-removebg-preview.png"],
   },
 };
+
+
 
 export default function RootLayout({ children }) {
   return (
