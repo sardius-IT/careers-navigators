@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import { useMemo } from "react";
 
 import { useState, useEffect } from "react";
 import StudyGoals from "../app/StudyGoals/page";
@@ -19,11 +20,15 @@ export default function Hero() {
   const [index, setIndex] = useState(0);
 
   // 👇 Text phrases to type
-  const texts = [
+ const texts = useMemo(
+  () => [
     "Find the Best Exams",
     "Explore Top-Ranked Colleges",
     "Shape Your Career Path",
-  ];
+  ],
+  []
+);
+
 
   useEffect(() => {
     const interval = setInterval(() => {

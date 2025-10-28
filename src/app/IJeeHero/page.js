@@ -1,4 +1,7 @@
 "use client";
+"use client";
+import Image from "next/image";
+import React from "react";
 import { useState } from "react";
 import Navbar from "../../app/navbar/page ";
 import NewsletterSection from "../../app/NewsletterSection/page";
@@ -44,13 +47,14 @@ export default function IJeeHero() {
           <h1 className="text-5xl md:text-6xl font-extrabold bg-gradient-to-r from-green-700 via-yellow-600 to-green-700 bg-clip-text text-transparent">
             IRST JEE 2025
           </h1>
-          <p className="mt-6 text-lg md:text-xl text-gray-700">
-            Embark on your journey to excellence at India's premier engineering
-            institution
-          </p>
-          <p className="mt-4 text-green-700 font-semibold text-lg md:text-xl">
-            Shaping Tomorrow's Leaders Today
-          </p>
+         <p className="mt-6 text-lg md:text-xl text-gray-700">
+  {`Embark on your journey to excellence at India's premier engineering institution`}
+</p>
+
+         <p className="mt-4 text-green-700 font-semibold text-lg md:text-xl">
+  {`Shaping Tomorrow's Leaders Today`}
+</p>
+
 
           {/* Small decorative dots */}
           <div className="flex justify-center gap-2 mt-5">
@@ -191,10 +195,10 @@ export default function IJeeHero() {
         <h1 className="text-4xl font-extrabold bg-gradient-to-r from-green-700 via-yellow-600 to-green-700 bg-clip-text text-transparent">
           IRST JEE 2025
         </h1>
-        <p className="mt-3 text-gray-700 text-sm">
-          Embark on your journey to excellence at India's premier engineering
-          institution.
-        </p>
+      <p className="mt-3 text-gray-700 text-sm">
+  {`Embark on your journey to excellence at India's premier engineering institution.`}
+</p>
+
       </div>
 
    
@@ -227,7 +231,7 @@ export default function IJeeHero() {
               key={i}
               className="border border-yellow-200 p-4 rounded-xl shadow-sm hover:shadow-md transition"
             >
-              <img
+              <Image
                 src={`/college logo/${filename}`} // ✅ correct folder path
                 alt={`University ${i + 1}`}
                 className="w-full h-16 md:h-20 object-contain mb-2"
