@@ -42,8 +42,8 @@ export default function Navbar() {
     <Image
   src="/logo.png"
   alt="Logo"
-  width={120}  // ✅ required
-  height={50}  // ✅ required
+  width={180}  // ✅ required
+  height={150}  // ✅ required
   className="object-contain hover:opacity-80 transition-opacity"
 />
 
