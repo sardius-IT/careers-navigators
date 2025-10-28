@@ -1,6 +1,8 @@
 "use client";
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
+import Image from "next/image";
+
 
 export default function Navbar() {
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -9,7 +11,7 @@ export default function Navbar() {
     <nav className="bg-green-800 text-white px-6 py-3 flex items-center justify-between">
       {/* Left Section: Logo + Title */}
       <div className="flex items-center gap-3">
-        <img
+        <Image
           src="/imgi_1_logo.gif" // replace with your logo image path
           alt="IRST Logo"
           className="w-12 h-12 rounded-full"
