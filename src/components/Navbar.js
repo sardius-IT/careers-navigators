@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
+import Image from "next/image";
 
 export default function Navbar() {
   const categories = [
@@ -39,10 +40,13 @@ export default function Navbar() {
          <div className="flex items-center gap-2">
   <Link href="/hero" className="cursor-pointer">
     <Image
-      src="/logo.png"
-      alt="Logo"
-      className="h-12 object-contain hover:opacity-80 transition-opacity"
-    />
+  src="/logo.png"
+  alt="Logo"
+  width={120}  // ✅ required
+  height={50}  // ✅ required
+  className="object-contain hover:opacity-80 transition-opacity"
+/>
+
   </Link>
 </div>
 
@@ -117,21 +121,21 @@ export default function Navbar() {
                 href="/promotion/education-fair"
                 className="flex items-center gap-2 hover:bg-gray-100 p-2 rounded-lg transition"
               >
-                <img src="/education-fair-logo.png" alt="Education Fair" className="h-6" />
+                <Image src="/education-fair-logo.png" alt="Education Fair" className="h-6" />
                 <span>Education Fair-2025</span>
               </Link>
               <Link
                 href="/promotion/irst-lms"
                 className="flex items-center gap-2 hover:bg-gray-100 p-2 rounded-lg transition"
               >
-                <img src="/irst-lms-logo.png" alt="IRST-LMS" className="h-6" />
+                <Image src="/irst-lms-logo.png" alt="IRST-LMS" className="h-6" />
                 <span>IRST-LMS</span>
               </Link>
               <Link
                 href="/promotion/job"
                 className="flex items-center gap-2 hover:bg-gray-100 p-2 rounded-lg transition"
               >
-                <img src="/job-logo.png" alt="Job" className="h-6" />
+                <Image src="/job-logo.png" alt="Job" className="h-6" />
                 <span>Job</span>
               </Link>
             </div>
