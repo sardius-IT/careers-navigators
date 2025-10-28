@@ -18,7 +18,7 @@ export default function ContactPage() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const adminNumber = "198897537334"; // Your admin WhatsApp number (country code + number)
+    const adminNumber = "919543788999"; // Your admin WhatsApp number (country code + number)
     const text = `New Contact Message:%0A
 Name: ${formData.name}%0A
 Email: ${formData.email}%0A

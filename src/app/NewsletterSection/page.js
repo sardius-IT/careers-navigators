@@ -19,7 +19,7 @@ export default function NewsletterSection() {
     e.preventDefault();
 
     // Replace this number with your WhatsApp admin number
-    const adminNumber = "8897537334";
+    const adminNumber = "9543788999";
 
     const text = `📢 *Newsletter Subscription Request*%0A%0A📧 Email: ${form.email}%0A📞 Phone: ${form.phone}%0A🎓 Course: ${form.course}`;
 
