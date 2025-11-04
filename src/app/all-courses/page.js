@@ -4,7 +4,7 @@ import Navbar from "./../../components/Navbar";
 import Image from "next/image";
 import { MapPin } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-
+import NewsletterSection from "../../app/NewsletterSection/page";
 const colleges = [
   // === ENGINEERING ===
   {
@@ -232,6 +232,7 @@ export default function AllCoursesPage() {
           </motion.p>
         )}
       </div>
+      <NewsletterSection />
     </>
   );
 }

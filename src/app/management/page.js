@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { MapPin } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import NewsletterSection from "../../app/NewsletterSection/page";
 
 const colleges = [
   // === Tamil Nadu Management Colleges ===
@@ -195,6 +196,7 @@ export default function TopManagementColleges() {
           </motion.p>
         )}
       </div>
+      <NewsletterSection />
     </>
   );
 }
