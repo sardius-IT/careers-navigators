@@ -5,6 +5,7 @@ import Image from "next/image";
 import { MapPin } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import NewsletterSection from "../../app/NewsletterSection/page";
+import OurOffices from "../../components/OurOffices";
 const colleges = [
   // === Tamil Nadu Pharmacy Colleges ===
   {
@@ -90,6 +91,413 @@ const colleges = [
     type: "Pharmacy",
     image: "/colleges/jamia_pharmacy.jpg",
   },
+  // === Tamil Nadu Pharmacy Colleges ===
+{
+  name: "Madras Medical College - Department of Pharmacy",
+  state: "Tamil Nadu",
+  city: "Chennai",
+  type: "Pharmacy",
+  image: "/Madras Medical College Chennai.jpg",
+},
+{
+  name: "SRM College of Pharmacy",
+  state: "Tamil Nadu",
+  city: "Kattankulathur",
+  type: "Pharmacy",
+  image: "/SRM College of Pharmacy Kattankulathur.jpg",
+},
+{
+  name: "JSS College of Pharmacy",
+  state: "Tamil Nadu",
+  city: "Ooty",
+  type: "Pharmacy",
+  image: "/JSS College of Pharmacy Ooty.jpg",
+},
+{
+  name: "PSG College of Pharmacy",
+  state: "Tamil Nadu",
+  city: "Coimbatore",
+  type: "Pharmacy",
+  image: "/PSG College of Pharmacy Coimbatore.jpg",
+},
+{
+  name: "Sri Ramachandra Faculty of Pharmacy",
+  state: "Tamil Nadu",
+  city: "Chennai",
+  type: "Pharmacy",
+  image: "/Sri Ramachandra Faculty of Pharmacy Chennai.jpg",
+},
+
+// === Karnataka Pharmacy Colleges ===
+{
+  name: "Manipal College of Pharmaceutical Sciences (MCOPS)",
+  state: "Karnataka",
+  city: "Manipal",
+  type: "Pharmacy",
+  image: "/Manipal College of Pharmaceutical Sciences Manipal.jpg",
+},
+{
+  name: "JSS College of Pharmacy",
+  state: "Karnataka",
+  city: "Mysuru",
+  type: "Pharmacy",
+  image: "/JSS College of Pharmacy Mysuru.jpg",
+},
+{
+  name: "Al-Ameen College of Pharmacy",
+  state: "Karnataka",
+  city: "Bengaluru",
+  type: "Pharmacy",
+  image: "/Al-Ameen College of Pharmacy Bengaluru.jpg",
+},
+{
+  name: "KLE College of Pharmacy",
+  state: "Karnataka",
+  city: "Belagavi",
+  type: "Pharmacy",
+  image: "/KLE College of Pharmacy Belagavi.jpg",
+},
+{
+  name: "Dayananda Sagar College of Pharmacy",
+  state: "Karnataka",
+  city: "Bengaluru",
+  type: "Pharmacy",
+  image: "/Dayananda Sagar College of Pharmacy Bengaluru.jpg",
+},
+
+// === Maharashtra Pharmacy Colleges ===
+{
+  name: "Bombay College of Pharmacy",
+  state: "Maharashtra",
+  city: "Mumbai",
+  type: "Pharmacy",
+  image: "/Bombay College of Pharmacy Mumbai.jpg",
+},
+{
+  name: "Poona College of Pharmacy",
+  state: "Maharashtra",
+  city: "Pune",
+  type: "Pharmacy",
+  image: "/Poona College of Pharmacy Pune.jpg",
+},
+{
+  name: "Institute of Chemical Technology (ICT)",
+  state: "Maharashtra",
+  city: "Mumbai",
+  type: "Pharmacy",
+  image: "/Institute of Chemical Technology Mumbai.jpg",
+},
+{
+  name: "Bharati Vidyapeeth College of Pharmacy",
+  state: "Maharashtra",
+  city: "Kolhapur",
+  type: "Pharmacy",
+  image: "/Bharati Vidyapeeth College of Pharmacy Kolhapur.jpg",
+},
+{
+  name: "Dr. D. Y. Patil Institute of Pharmaceutical Sciences and Research",
+  state: "Maharashtra",
+  city: "Pune",
+  type: "Pharmacy",
+  image: "/Dr D Y Patil Institute of Pharmaceutical Sciences Pune.jpg",
+},
+
+// === Delhi Pharmacy Colleges ===
+{
+  name: "Delhi Institute of Pharmaceutical Sciences and Research (DIPSAR)",
+  state: "Delhi",
+  city: "New Delhi",
+  type: "Pharmacy",
+  image: "/Delhi Institute of Pharmaceutical Sciences and Research DIPSAR.jpg",
+},
+{
+  name: "Jamia Hamdard - School of Pharmaceutical Education and Research",
+  state: "Delhi",
+  city: "New Delhi",
+  type: "Pharmacy",
+  image: "/Jamia Hamdard School of Pharmaceutical Education New Delhi.jpg",
+},
+{
+  name: "Faculty of Pharmacy, University of Delhi",
+  state: "Delhi",
+  city: "New Delhi",
+  type: "Pharmacy",
+  image: "/Faculty of Pharmacy University of Delhi.jpg",
+},
+{
+  name: "Amity Institute of Pharmacy",
+  state: "Delhi",
+  city: "Noida (NCR)",
+  type: "Pharmacy",
+  image: "/Amity Institute of Pharmacy Noida.jpg",
+},
+{
+  name: "Maharaja Surajmal Institute of Pharmacy",
+  state: "Delhi",
+  city: "Janakpuri, New Delhi",
+  type: "Pharmacy",
+  image: "/Maharaja Surajmal Institute of Pharmacy Delhi.jpg",
+},
+
+// === Kerala Pharmacy Colleges ===
+{
+  name: "Government Medical College - School of Pharmacy",
+  state: "Kerala",
+  city: "Thiruvananthapuram",
+  type: "Pharmacy",
+  image: "/Government Medical College School of Pharmacy Thiruvananthapuram.jpg",
+},
+{
+  name: "Al Shifa College of Pharmacy",
+  state: "Kerala",
+  city: "Perinthalmanna",
+  type: "Pharmacy",
+  image: "/Al Shifa College of Pharmacy Perinthalmanna.jpg",
+},
+{
+  name: "Amrita School of Pharmacy",
+  state: "Kerala",
+  city: "Kochi",
+  type: "Pharmacy",
+  image: "/Amrita School of Pharmacy Kochi.jpg",
+},
+{
+  name: "Nirmala College of Pharmacy",
+  state: "Kerala",
+  city: "Muvattupuzha",
+  type: "Pharmacy",
+  image: "/Nirmala College of Pharmacy Muvattupuzha.jpg",
+},
+{
+  name: "KMCT College of Pharmaceutical Sciences",
+  state: "Kerala",
+  city: "Kozhikode",
+  type: "Pharmacy",
+  image: "/KMCT College of Pharmaceutical Sciences Kozhikode.jpg",
+},
+
+// === Andhra Pradesh Pharmacy Colleges ===
+{
+  name: "A.U. College of Pharmaceutical Sciences",
+  state: "Andhra Pradesh",
+  city: "Visakhapatnam",
+  type: "Pharmacy",
+  image: "/AU College of Pharmaceutical Sciences Visakhapatnam.jpg",
+},
+{
+  name: "Sri Padmavathi School of Pharmacy",
+  state: "Andhra Pradesh",
+  city: "Tirupati",
+  type: "Pharmacy",
+  image: "/Sri Padmavathi School of Pharmacy Tirupati.jpg",
+},
+{
+  name: "Chalapathi Institute of Pharmaceutical Sciences",
+  state: "Andhra Pradesh",
+  city: "Guntur",
+  type: "Pharmacy",
+  image: "/Chalapathi Institute of Pharmaceutical Sciences Guntur.jpg",
+},
+{
+  name: "KVSR Siddhartha College of Pharmaceutical Sciences",
+  state: "Andhra Pradesh",
+  city: "Vijayawada",
+  type: "Pharmacy",
+  image: "/KVSR Siddhartha College of Pharmaceutical Sciences Vijayawada.jpg",
+},
+{
+  name: "Vignan Pharmacy College",
+  state: "Andhra Pradesh",
+  city: "Guntur",
+  type: "Pharmacy",
+  image: "/Vignan Pharmacy College Guntur.jpg",
+},
+
+// === Gujarat Pharmacy Colleges ===
+{
+  name: "L.M. College of Pharmacy",
+  state: "Gujarat",
+  city: "Ahmedabad",
+  type: "Pharmacy",
+  image: "/LM College of Pharmacy Ahmedabad.jpg",
+},
+{
+  name: "Institute of Pharmacy, Nirma University",
+  state: "Gujarat",
+  city: "Ahmedabad",
+  type: "Pharmacy",
+  image: "/Institute of Pharmacy Nirma University Ahmedabad.jpg",
+},
+{
+  name: "B.K. Mody Government Pharmacy College",
+  state: "Gujarat",
+  city: "Rajkot",
+  type: "Pharmacy",
+  image: "/BK Mody Government Pharmacy College Rajkot.jpg",
+},
+{
+  name: "A.R. College of Pharmacy and G.H. Patel Institute",
+  state: "Gujarat",
+  city: "Vallabh Vidyanagar",
+  type: "Pharmacy",
+  image: "/AR College of Pharmacy Vallabh Vidyanagar.jpg",
+},
+{
+  name: "Shree Dhanvantary Pharmacy College",
+  state: "Gujarat",
+  city: "Surat",
+  type: "Pharmacy",
+  image: "/Shree Dhanvantary Pharmacy College Surat.jpg",
+},
+
+// === Telangana Pharmacy Colleges ===
+{
+  name: "University College of Pharmaceutical Sciences, Kakatiya University",
+  state: "Telangana",
+  city: "Warangal",
+  type: "Pharmacy",
+  image: "/University College of Pharmaceutical Sciences Warangal.jpg",
+},
+{
+  name: "Anurag Group of Institutions - School of Pharmacy",
+  state: "Telangana",
+  city: "Hyderabad",
+  type: "Pharmacy",
+  image: "/Anurag Group of Institutions School of Pharmacy Hyderabad.jpg",
+},
+{
+  name: "G. Pulla Reddy College of Pharmacy",
+  state: "Telangana",
+  city: "Hyderabad",
+  type: "Pharmacy",
+  image: "/G Pulla Reddy College of Pharmacy Hyderabad.jpg",
+},
+{
+  name: "St. Peter’s Institute of Pharmaceutical Sciences",
+  state: "Telangana",
+  city: "Warangal",
+  type: "Pharmacy",
+  image: "/St Peters Institute of Pharmaceutical Sciences Warangal.jpg",
+},
+{
+  name: "Malla Reddy Pharmacy College",
+  state: "Telangana",
+  city: "Hyderabad",
+  type: "Pharmacy",
+  image: "/Malla Reddy Pharmacy College Hyderabad.jpg",
+},
+
+// === Madhya Pradesh Pharmacy Colleges ===
+{
+  name: "Institute of Pharmaceutical Sciences, DAVV",
+  state: "Madhya Pradesh",
+  city: "Indore",
+  type: "Pharmacy",
+  image: "/Institute of Pharmaceutical Sciences DAVV Indore.jpg",
+},
+{
+  name: "Bhabha Pharmacy Research Institute",
+  state: "Madhya Pradesh",
+  city: "Bhopal",
+  type: "Pharmacy",
+  image: "/Bhabha Pharmacy Research Institute Bhopal.jpg",
+},
+{
+  name: "Rajiv Gandhi Proudyogiki Vishwavidyalaya (RGPV) - School of Pharmacy",
+  state: "Madhya Pradesh",
+  city: "Bhopal",
+  type: "Pharmacy",
+  image: "/RGPV School of Pharmacy Bhopal.jpg",
+},
+{
+  name: "Smriti College of Pharmaceutical Education",
+  state: "Madhya Pradesh",
+  city: "Indore",
+  type: "Pharmacy",
+  image: "/Smriti College of Pharmaceutical Education Indore.jpg",
+},
+{
+  name: "Guru Ramdas Khalsa Institute of Science and Technology (Pharmacy)",
+  state: "Madhya Pradesh",
+  city: "Jabalpur",
+  type: "Pharmacy",
+  image: "/Guru Ramdas Khalsa Institute Pharmacy Jabalpur.jpg",
+},
+
+// === Odisha Pharmacy Colleges ===
+{
+  name: "Dadhichi College of Pharmacy",
+  state: "Odisha",
+  city: "Cuttack",
+  type: "Pharmacy",
+  image: "/Dadhichi College of Pharmacy Cuttack.jpg",
+},
+{
+  name: "College of Pharmaceutical Sciences, Mohuda",
+  state: "Odisha",
+  city: "Berhampur",
+  type: "Pharmacy",
+  image: "/College of Pharmaceutical Sciences Mohuda Berhampur.jpg",
+},
+{
+  name: "Roland Institute of Pharmaceutical Sciences",
+  state: "Odisha",
+  city: "Berhampur",
+  type: "Pharmacy",
+  image: "/Roland Institute of Pharmaceutical Sciences Berhampur.jpg",
+},
+{
+  name: "Indira Gandhi Institute of Pharmaceutical Sciences",
+  state: "Odisha",
+  city: "Bhubaneswar",
+  type: "Pharmacy",
+  image: "/Indira Gandhi Institute of Pharmaceutical Sciences Bhubaneswar.jpg",
+},
+{
+  name: "Gayatri College of Pharmacy",
+  state: "Odisha",
+  city: "Sambalpur",
+  type: "Pharmacy",
+  image: "/Gayatri College of Pharmacy Sambalpur.jpg",
+},
+
+// === Uttar Pradesh Pharmacy Colleges ===
+{
+  name: "Birla Institute of Technology, Mesra - Noida Campus (Pharmacy)",
+  state: "Uttar Pradesh",
+  city: "Noida",
+  type: "Pharmacy",
+  image: "/BIT Mesra Noida Campus Pharmacy.jpg",
+},
+{
+  name: "Amity Institute of Pharmacy",
+  state: "Uttar Pradesh",
+  city: "Noida",
+  type: "Pharmacy",
+  image: "/Amity Institute of Pharmacy Noida.jpg",
+},
+{
+  name: "Pranveer Singh Institute of Technology (PSIT) - School of Pharmacy",
+  state: "Uttar Pradesh",
+  city: "Kanpur",
+  type: "Pharmacy",
+  image: "/PSIT School of Pharmacy Kanpur.jpg",
+},
+{
+  name: "Babu Banarasi Das College of Pharmacy",
+  state: "Uttar Pradesh",
+  city: "Lucknow",
+  type: "Pharmacy",
+  image: "/Babu Banarasi Das College of Pharmacy Lucknow.jpg",
+},
+{
+  name: "I.T.S College of Pharmacy",
+  state: "Uttar Pradesh",
+  city: "Ghaziabad",
+  type: "Pharmacy",
+  image: "/ITS College of Pharmacy Ghaziabad.jpg",
+},
+
 ];
 
 const states = [
@@ -209,6 +617,7 @@ export default function TopPharmacyColleges() {
           </motion.p>
         )}
       </div>
+      <OurOffices/>
       <NewsletterSection />
     </>
   );

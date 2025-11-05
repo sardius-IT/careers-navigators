@@ -5,6 +5,7 @@ import Image from "next/image";
 import { MapPin } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import NewsletterSection from "../../app/NewsletterSection/page";
+import OurOffices from "../../components/OurOffices";
 const colleges = [
   // === Tamil Nadu Engineering Colleges ===
   {
@@ -12,21 +13,21 @@ const colleges = [
     state: "Tamil Nadu",
     city: "Chennai",
     type: "Engineering",
-    image: "/colleges/iitm.jpg",
+    image: "/indian institute of technology.jpg",
   },
   {
     name: "Vellore Institute of Technology (VIT)",
     state: "Tamil Nadu",
     city: "Vellore",
     type: "Engineering",
-    image: "/colleges/vit.jpg",
+    image: "/vellore-institute-of-technology-chennai.jpg",
   },
   {
     name: "SRM Institute of Science and Technology",
     state: "Tamil Nadu",
     city: "Kattankulathur",
     type: "Engineering",
-    image: "/colleges/srm.jpg",
+    image: "/SRM.webp",
   },
 
   // === Bangalore Engineering Colleges ===
@@ -35,21 +36,21 @@ const colleges = [
     state: "Bangalore",
     city: "Bangalore",
     type: "Engineering",
-    image: "/colleges/rvce.jpg",
+    image: "/R.V. College of Engineering.webp",
   },
   {
     name: "BMS College of Engineering",
     state: "Bangalore",
     city: "Bangalore",
     type: "Engineering",
-    image: "/colleges/bms.jpg",
+    image: "/BMS-College-of-Engineering.jpg",
   },
   {
     name: "PES University",
     state: "Bangalore",
     city: "Bangalore",
     type: "Engineering",
-    image: "/colleges/pes.jpg",
+    image: "/PES University.jpg",
   },
 
   // === Maharashtra Engineering Colleges ===
@@ -58,22 +59,264 @@ const colleges = [
     state: "Maharashtra",
     city: "Mumbai",
     type: "Engineering",
-    image: "/colleges/iitb.jpg",
+    image: "/Indian Institute of Technology Bombay.jpg",
   },
   {
     name: "College of Engineering Pune (COEP)",
     state: "Maharashtra",
     city: "Pune",
     type: "Engineering",
-    image: "/colleges/coep.jpg",
+    image: "/College of Engineering Pune (COEP).jpg",
   },
   {
     name: "VJTI (Veermata Jijabai Technological Institute)",
     state: "Maharashtra",
     city: "Mumbai",
     type: "Engineering",
-    image: "/colleges/vjti.jpg",
+    image: "/VJTI (Veermata Jijabai Technological Institute).jpg",
   },
+  // === Kerala Engineering Colleges ===
+{
+  name: "National Institute of Technology Calicut (NIT Calicut)",
+  state: "Kerala",
+  city: "Kozhikode",
+  type: "Engineering",
+  image: "/National Institute of Technology Calicut (NIT Calicut).png",
+},
+{
+  name: "Indian Institute of Technology Palakkad (IIT Palakkad)",
+  state: "Kerala",
+  city: "Palakkad",
+  type: "Engineering",
+  image: "/Indian Institute of Technology Palakkad (IIT Palakkad).jpg",
+},
+{
+  name: "College of Engineering Trivandrum (CET)",
+  state: "Kerala",
+  city: "Thiruvananthapuram",
+  type: "Engineering",
+  image: "/College of Engineering Trivandrum (CET).avif",
+},
+{
+  name: "Government Engineering College Thrissur (GEC Thrissur)",
+  state: "Kerala",
+  city: "Thrissur",
+  type: "Engineering",
+  image: "/Government Engineering College Thrissur (GEC Thrissur).jpeg",
+},
+// === Andhra Pradesh Engineering Colleges ===
+{
+  name: "Indian Institute of Technology Tirupati (IIT Tirupati)",
+  state: "Andhra Pradesh",
+  city: "Tirupati",
+  type: "Engineering",
+  image: "/Indian Institute of Technology Tirupati.jpeg",
+},
+{
+  name: "National Institute of Technology Andhra Pradesh (NIT Andhra Pradesh)",
+  state: "Andhra Pradesh",
+  city: "Tadepalligudem",
+  type: "Engineering",
+  image: "/NIT.jpg",
+},
+{
+  name: "Vellore Institute of Technology Amaravati (VIT-AP University)",
+  state: "Andhra Pradesh",
+  city: "Amaravati",
+  type: "Engineering",
+  image: "/Vellore Institute of Technolog.jpg",
+},
+
+// === Telangana Engineering Colleges ===
+{
+  name: "Indian Institute of Technology Hyderabad (IIT Hyderabad)",
+  state: "Telangana",
+  city: "Hyderabad",
+  type: "Engineering",
+  image: "/IIT.jpg",
+},
+{
+  name: "International Institute of Information Technology Hyderabad (IIIT Hyderabad)",
+  state: "Telangana",
+  city: "Hyderabad",
+  type: "Engineering",
+  image: "/International Institute.jpg",
+},
+{
+  name: "National Institute of Technology Warangal (NIT Warangal)",
+  state: "Telangana",
+  city: "Warangal",
+  type: "Engineering",
+  image: "/National Insti.jpeg",
+},
+
+
+// === Gujarat Engineering Colleges ===
+{
+  name: "Indian Institute of Technology Gandhinagar (IIT Gandhinagar)",
+  state: "Gujarat",
+  city: "Gandhinagar",
+  type: "Engineering",
+  image: "/(IIT Gandhinagar).jpeg",
+},
+{
+  name: "Sardar Vallabhbhai National Institute of Technology Surat (SVNIT Surat)",
+  state: "Gujarat",
+  city: "Surat",
+  type: "Engineering",
+  image: "/SVNIT Surat.jpg",
+},
+{
+  name: "Pandit Deendayal Energy University (PDEU)",
+  state: "Gujarat",
+  city: "Gandhinagar",
+  type: "Engineering",
+  image: "/(PDEU).jpeg",
+},
+
+
+
+// === Madhya Pradesh Engineering Colleges ===
+{
+  name: "Indian Institute of Technology Indore (IIT Indore)",
+  state: "Madhya Pradesh",
+  city: "Indore",
+  type: "Engineering",
+  image: "/Indian Institute of Technology Indore (IIT Indore).jpg",
+},
+{
+  name: "Maulana Azad National Institute of Technology Bhopal (MANIT Bhopal)",
+  state: "Madhya Pradesh",
+  city: "Bhopal",
+  type: "Engineering",
+  image: "/Maulana Azad National Institute of Technology Bhopal (MANIT Bhopal).jpg",
+},
+{
+  name: "Indian Institute of Information Technology and Management Gwalior (IIITM Gwalior)",
+  state: "Madhya Pradesh",
+  city: "Gwalior",
+  type: "Engineering",
+  image: "/Indian Institute of Information Technology and Management Gwalior (IIITM Gwalior).jpg",
+},
+{
+  name: "Shri Govindram Seksaria Institute of Technology and Science (SGSITS)",
+  state: "Madhya Pradesh",
+  city: "Indore",
+  type: "Engineering",
+  image: "/Shri Govindram Seksaria Institute of Technology and Science (SGSITS).jpg",
+},
+// === West Bengal Engineering Colleges ===
+{
+  name: "Indian Institute of Technology Kharagpur (IIT Kharagpur)",
+  state: "West Bengal",
+  city: "Kharagpur",
+  type: "Engineering",
+  image: "/Indian Institute of Technology Kharagpur (IIT Kharagpur).jpg",
+},
+{
+  name: "Jadavpur University, Faculty of Engineering and Technology",
+  state: "West Bengal",
+  city: "Kolkata",
+  type: "Engineering",
+  image: "/Jadavpur University Faculty of Engineering and Technology.jpg",
+},
+{
+  name: "Indian Institute of Engineering Science and Technology Shibpur (IIEST Shibpur)",
+  state: "West Bengal",
+  city: "Howrah",
+  type: "Engineering",
+  image: "/Indian Institute of Engineering Science and Technology Shibpur (IIEST Shibpur).jpg",
+},
+{
+  name: "National Institute of Technology Durgapur (NIT Durgapur)",
+  state: "West Bengal",
+  city: "Durgapur",
+  type: "Engineering",
+  image: "/National Institute of Technology Durgapur (NIT Durgapur).jpg",
+},
+{
+  name: "National Institute of Technology Durgapur (NIT Durgapur)",
+  state: "West Bengal",
+  city: "Durgapur",
+  type: "Engineering",
+  image: "/National Institute of Technology Durgapur (NIT Durgapur).jpg",
+},
+
+// === Uttar Pradesh Engineering Colleges ===
+{
+  name: "Indian Institute of Technology Kanpur (IIT Kanpur)",
+  state: "Uttar Pradesh",
+  city: "Kanpur",
+  type: "Engineering",
+  image: "/Indian Institute of Technology Kanpur (IIT Kanpur).jpg",
+},
+{
+  name: "Indian Institute of Information Technology Allahabad (IIIT Allahabad)",
+  state: "Uttar Pradesh",
+  city: "Prayagraj (Allahabad)",
+  type: "Engineering",
+  image: "/Indian Institute of Information Technology Allahabad (IIIT Allahabad).jpg",
+},
+{
+  name: "Motilal Nehru National Institute of Technology Allahabad (MNNIT Allahabad)",
+  state: "Uttar Pradesh",
+  city: "Prayagraj (Allahabad)",
+  type: "Engineering",
+  image: "/Motilal Nehru National Institute of Technology Allahabad (MNNIT Allahabad).jpg",
+},
+{
+  name: "Harcourt Butler Technical University (HBTU Kanpur)",
+  state: "Uttar Pradesh",
+  city: "Kanpur",
+  type: "Engineering",
+  image: "/Harcourt Butler Technical University (HBTU Kanpur).jpg",
+},
+{
+  name: "Indian Institute of Technology (BHU) Varanasi",
+  state: "Uttar Pradesh",
+  city: "Varanasi",
+  type: "Engineering",
+  image: "/Indian Institute of Technology (BHU) Varanasi.jpg",
+},
+// === Arunachal Pradesh Engineering Colleges ===
+{
+  name: "National Institute of Technology Arunachal Pradesh (NIT Arunachal Pradesh)",
+  state: "Arunachal Pradesh",
+  city: "Yupia",
+  type: "Engineering",
+  image: "/National Institute of Technology Arunachal Pradesh (NIT Arunachal Pradesh).jpg",
+},
+{
+  name: "North Eastern Regional Institute of Science and Technology (NERIST)",
+  state: "Arunachal Pradesh",
+  city: "Nirjuli, Itanagar",
+  type: "Engineering",
+  image: "/North Eastern Regional Institute of Science and Technology (NERIST).jpg",
+},
+{
+  name: "National Institute of Electronics and Information Technology Itanagar (NIELIT Itanagar)",
+  state: "Arunachal Pradesh",
+  city: "Itanagar",
+  type: "Engineering",
+  image: "/National Institute of Electronics and Information Technology Itanagar (NIELIT Itanagar).jpg",
+},
+{
+  name: "Rajiv Gandhi Government Polytechnic (RGGP)",
+  state: "Arunachal Pradesh",
+  city: "Itanagar",
+  type: "Engineering",
+  image: "/Rajiv Gandhi Government Polytechnic (RGGP).jpg",
+},
+{
+  name: "Tomi Polytechnic College",
+  state: "Arunachal Pradesh",
+  city: "Basar",
+  type: "Engineering",
+  image: "/Tomi Polytechnic College.jpg",
+},
+
+
+
 ];
 
 const states = [
@@ -85,9 +328,9 @@ const states = [
   "Gujarat",
   "Telangana",
   "Madhya Pradesh",
-  "Odisha",
   "West Bengal",
   "Uttar Pradesh",
+  "Arunachal Pradesh ",
 ];
 
 export default function TopUniversities() {
@@ -196,6 +439,7 @@ export default function TopUniversities() {
         </motion.p>
       )}
     </div>
+    <OurOffices/>
     <NewsletterSection />
     </>
   );

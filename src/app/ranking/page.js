@@ -1,9 +1,11 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Navbar from "../../app/navbar/page ";
+import Navbar from "../../components/Navbar";
 import Image from "next/image";
 import Contact from "../../app/contact/page";
+import NewsletterSection from "../../app/NewsletterSection/page";
+import OurOffices from "../../components/OurOffices";
 import {
   Smile,
   ListChecks,
@@ -49,7 +51,7 @@ export default function RankingPage() {
   return (
     <main className="min-h-screen bg-white text-gray-800 overflow-hidden">
       {/* ===== Navbar ===== */}
-      <Navbar />
+      <Navbar/>
    
 
       {/* ===== HERO SECTION ===== */}
@@ -246,6 +248,8 @@ export default function RankingPage() {
       <h1 className="flex justify-center items-center text-5xl gap-5">contact us</h1>
       </section>
       <Contact/>
+      <OurOffices/>
+      <NewsletterSection/>
     </main>
   );
 }

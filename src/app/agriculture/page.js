@@ -5,6 +5,7 @@ import Image from "next/image";
 import { MapPin } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import NewsletterSection from "../../app/NewsletterSection/page";
+import OurOffices from "../../components/OurOffices";
 const colleges = [
   // === Tamil Nadu Agriculture Colleges ===
   {
@@ -12,21 +13,21 @@ const colleges = [
     state: "Tamil Nadu",
     city: "Coimbatore",
     type: "Agriculture",
-    image: "/colleges/tnau.jpg",
+    image: "/Tamil Nadu Agricultural University.jpg",
   },
   {
     name: "Annamalai University - Faculty of Agriculture",
     state: "Tamil Nadu",
     city: "Chidambaram",
     type: "Agriculture",
-    image: "/colleges/annamalai_agri.jpg",
+    image: "/Annamalai University.jpeg",
   },
   {
     name: "Agricultural College and Research Institute, Madurai",
     state: "Tamil Nadu",
     city: "Madurai",
     type: "Agriculture",
-    image: "/colleges/acri_madurai.jpg",
+    image: "/Agricultural College and Research Institute, Madurai.webp",
   },
 
   // === Bangalore Agriculture Colleges ===
@@ -35,21 +36,21 @@ const colleges = [
     state: "Bangalore",
     city: "Bangalore",
     type: "Agriculture",
-    image: "/colleges/uas_bangalore.jpg",
+    image: "/University of Agricultural Sciences, Bengaluru,img.jpg",
   },
   {
     name: "College of Agriculture, Hassan",
     state: "Bangalore",
     city: "Hassan",
     type: "Agriculture",
-    image: "/colleges/hassan_agri.jpg",
+    image: "/College of Agriculture, Hassan.jpg",
   },
   {
     name: "R V College of Agriculture and Research",
     state: "Bangalore",
     city: "Bangalore",
     type: "Agriculture",
-    image: "/colleges/rv_agri.jpg",
+    image: "/R V College of Agriculture and Research.jpg",
   },
 
   // === Maharashtra Agriculture Colleges ===
@@ -58,22 +59,349 @@ const colleges = [
     state: "Maharashtra",
     city: "Rahuri",
     type: "Agriculture",
-    image: "/colleges/mpkv.jpg",
+    image: "/Mahatma Phule Krishi Vidyapeeth.jpeg",
   },
   {
     name: "Dr. Panjabrao Deshmukh Krishi Vidyapeeth (PDKV)",
     state: "Maharashtra",
     city: "Akola",
     type: "Agriculture",
-    image: "/colleges/pdkv.jpg",
+    image: "/(PDKV).webp",
   },
-  {
-    name: "Vasantrao Naik Marathwada Krishi Vidyapeeth (VNMKV)",
-    state: "Maharashtra",
-    city: "Parbhani",
-    type: "Agriculture",
-    image: "/colleges/vnmk.jpg",
-  },
+  
+  // === Kerala Agriculture Colleges ===
+{
+  name: "Kerala Agricultural University (KAU)",
+  state: "Kerala",
+  city: "Thrissur",
+  type: "Agriculture",
+  image: "/Kerala Agricultural University Thrissur.jpg",
+},
+{
+  name: "College of Horticulture, Vellanikkara",
+  state: "Kerala",
+  city: "Thrissur",
+  type: "Agriculture",
+  image: "/College of Horticulture Vellanikkara Thrissur.jpg",
+},
+{
+  name: "College of Agriculture, Vellayani",
+  state: "Kerala",
+  city: "Thiruvananthapuram",
+  type: "Agriculture",
+  image: "/College of Agriculture Vellayani Thiruvananthapuram.jpg",
+},
+{
+  name: "College of Forestry, Thrissur",
+  state: "Kerala",
+  city: "Thrissur",
+  type: "Agriculture",
+  image: "/College of Forestry Thrissur.jpg",
+},
+{
+  name: "Regional Agricultural Research Station, Pattambi",
+  state: "Kerala",
+  city: "Palakkad",
+  type: "Agriculture",
+  image: "/Regional Agricultural Research Station Pattambi Palakkad.jpg",
+},
+
+// === Andhra Pradesh Agriculture Colleges ===
+{
+  name: "Acharya N.G. Ranga Agricultural University (ANGRAU)",
+  state: "Andhra Pradesh",
+  city: "Guntur",
+  type: "Agriculture",
+  image: "/Acharya N.G. Ranga Agricultural University Guntur.jpg",
+},
+{
+  name: "Agricultural College, Bapatla",
+  state: "Andhra Pradesh",
+  city: "Bapatla",
+  type: "Agriculture",
+  image: "/Agricultural College Bapatla.jpg",
+},
+{
+  name: "Agricultural College, Naira",
+  state: "Andhra Pradesh",
+  city: "Srikakulam",
+  type: "Agriculture",
+  image: "/Agricultural College Naira Srikakulam.jpg",
+},
+{
+  name: "Dr. N.T.R. College of Agricultural Engineering",
+  state: "Andhra Pradesh",
+  city: "Pulivendula",
+  type: "Agriculture",
+  image: "/Dr NTR College of Agricultural Engineering Pulivendula.jpg",
+},
+{
+  name: "Agricultural College, Tirupati",
+  state: "Andhra Pradesh",
+  city: "Tirupati",
+  type: "Agriculture",
+  image: "/Agricultural College Tirupati.jpg",
+},
+
+// === Gujarat Agriculture Colleges ===
+{
+  name: "Anand Agricultural University (AAU)",
+  state: "Gujarat",
+  city: "Anand",
+  type: "Agriculture",
+  image: "/Anand Agricultural University Anand.jpg",
+},
+{
+  name: "Navsari Agricultural University (NAU)",
+  state: "Gujarat",
+  city: "Navsari",
+  type: "Agriculture",
+  image: "/Navsari Agricultural University Navsari.jpg",
+},
+{
+  name: "Junagadh Agricultural University (JAU)",
+  state: "Gujarat",
+  city: "Junagadh",
+  type: "Agriculture",
+  image: "/Junagadh Agricultural University Junagadh.jpg",
+},
+{
+  name: "Sardarkrushinagar Dantiwada Agricultural University (SDAU)",
+  state: "Gujarat",
+  city: "Palanpur",
+  type: "Agriculture",
+  image: "/Sardarkrushinagar Dantiwada Agricultural University Palanpur.jpg",
+},
+{
+  name: "College of Agricultural Engineering and Technology, Godhra",
+  state: "Gujarat",
+  city: "Godhra",
+  type: "Agriculture",
+  image: "/College of Agricultural Engineering and Technology Godhra.jpg",
+},
+
+// === Telangana Agriculture Colleges ===
+{
+  name: "Professor Jayashankar Telangana State Agricultural University (PJTSAU)",
+  state: "Telangana",
+  city: "Hyderabad",
+  type: "Agriculture",
+  image: "/Professor Jayashankar Telangana State Agricultural University Hyderabad.jpg",
+},
+{
+  name: "College of Agriculture, Rajendranagar",
+  state: "Telangana",
+  city: "Hyderabad",
+  type: "Agriculture",
+  image: "/College of Agriculture Rajendranagar Hyderabad.jpg",
+},
+{
+  name: "Agricultural College, Palem",
+  state: "Telangana",
+  city: "Mahabubnagar",
+  type: "Agriculture",
+  image: "/Agricultural College Palem Mahabubnagar.jpg",
+},
+{
+  name: "Agricultural College, Jagtial",
+  state: "Telangana",
+  city: "Jagtial",
+  type: "Agriculture",
+  image: "/Agricultural College Jagtial.jpg",
+},
+{
+  name: "College of Agricultural Engineering, Sangareddy",
+  state: "Telangana",
+  city: "Sangareddy",
+  type: "Agriculture",
+  image: "/College of Agricultural Engineering Sangareddy.jpg",
+},
+
+// === Madhya Pradesh Agriculture Colleges ===
+{
+  name: "Rajmata Vijayaraje Scindia Krishi Vishwa Vidyalaya (RVSKVV)",
+  state: "Madhya Pradesh",
+  city: "Gwalior",
+  type: "Agriculture",
+  image: "/Rajmata Vijayaraje Scindia Krishi Vishwa Vidyalaya Gwalior.jpg",
+},
+{
+  name: "Jawaharlal Nehru Krishi Vishwa Vidyalaya (JNKVV)",
+  state: "Madhya Pradesh",
+  city: "Jabalpur",
+  type: "Agriculture",
+  image: "/Jawaharlal Nehru Krishi Vishwa Vidyalaya Jabalpur.jpg",
+},
+{
+  name: "College of Agriculture, Tikamgarh",
+  state: "Madhya Pradesh",
+  city: "Tikamgarh",
+  type: "Agriculture",
+  image: "/College of Agriculture Tikamgarh.jpg",
+},
+{
+  name: "College of Agriculture, Indore",
+  state: "Madhya Pradesh",
+  city: "Indore",
+  type: "Agriculture",
+  image: "/College of Agriculture Indore.jpg",
+},
+{
+  name: "College of Agriculture, Rewa",
+  state: "Madhya Pradesh",
+  city: "Rewa",
+  type: "Agriculture",
+  image: "/College of Agriculture Rewa.jpg",
+},
+
+// === Odisha Agriculture Colleges ===
+{
+  name: "Orissa University of Agriculture and Technology (OUAT)",
+  state: "Odisha",
+  city: "Bhubaneswar",
+  type: "Agriculture",
+  image: "/Orissa University of Agriculture and Technology Bhubaneswar.jpg",
+},
+{
+  name: "College of Agriculture, Bhubaneswar",
+  state: "Odisha",
+  city: "Bhubaneswar",
+  type: "Agriculture",
+  image: "/College of Agriculture Bhubaneswar.jpg",
+},
+{
+  name: "College of Horticulture, Chiplima",
+  state: "Odisha",
+  city: "Sambalpur",
+  type: "Agriculture",
+  image: "/College of Horticulture Chiplima Sambalpur.jpg",
+},
+{
+  name: "College of Agricultural Engineering and Technology (CAET)",
+  state: "Odisha",
+  city: "Bhubaneswar",
+  type: "Agriculture",
+  image: "/College of Agricultural Engineering and Technology Bhubaneswar.jpg",
+},
+{
+  name: "Regional Research and Technology Transfer Station, Keonjhar",
+  state: "Odisha",
+  city: "Keonjhar",
+  type: "Agriculture",
+  image: "/Regional Research and Technology Transfer Station Keonjhar.jpg",
+},
+
+// === West Bengal Agriculture Colleges ===
+{
+  name: "Bidhan Chandra Krishi Viswavidyalaya (BCKV)",
+  state: "West Bengal",
+  city: "Nadia",
+  type: "Agriculture",
+  image: "/Bidhan Chandra Krishi Viswavidyalaya Nadia.jpg",
+},
+{
+  name: "Uttar Banga Krishi Viswavidyalaya (UBKV)",
+  state: "West Bengal",
+  city: "Cooch Behar",
+  type: "Agriculture",
+  image: "/Uttar Banga Krishi Viswavidyalaya Cooch Behar.jpg",
+},
+{
+  name: "Visva-Bharati University - Palli Siksha Bhavana",
+  state: "West Bengal",
+  city: "Santiniketan",
+  type: "Agriculture",
+  image: "/Visva Bharati University Palli Siksha Bhavana Santiniketan.jpg",
+},
+{
+  name: "College of Agriculture, Burdwan University",
+  state: "West Bengal",
+  city: "Burdwan",
+  type: "Agriculture",
+  image: "/College of Agriculture Burdwan University Burdwan.jpg",
+},
+{
+  name: "Institute of Agriculture, Visva-Bharati",
+  state: "West Bengal",
+  city: "Santiniketan",
+  type: "Agriculture",
+  image: "/Institute of Agriculture Visva Bharati Santiniketan.jpg",
+},
+
+// === Uttar Pradesh Agriculture Colleges ===
+{
+  name: "Chandra Shekhar Azad University of Agriculture and Technology (CSAUAT)",
+  state: "Uttar Pradesh",
+  city: "Kanpur",
+  type: "Agriculture",
+  image: "/Chandra Shekhar Azad University of Agriculture and Technology Kanpur.jpg",
+},
+{
+  name: "Sardar Vallabhbhai Patel University of Agriculture and Technology (SVPUAT)",
+  state: "Uttar Pradesh",
+  city: "Meerut",
+  type: "Agriculture",
+  image: "/Sardar Vallabhbhai Patel University of Agriculture and Technology Meerut.jpg",
+},
+{
+  name: "Narendra Deva University of Agriculture and Technology (NDUAT)",
+  state: "Uttar Pradesh",
+  city: "Faizabad",
+  type: "Agriculture",
+  image: "/Narendra Deva University of Agriculture and Technology Faizabad.jpg",
+},
+{
+  name: "Banda University of Agriculture and Technology (BUAT)",
+  state: "Uttar Pradesh",
+  city: "Banda",
+  type: "Agriculture",
+  image: "/Banda University of Agriculture and Technology Banda.jpg",
+},
+{
+  name: "Sam Higginbottom University of Agriculture, Technology and Sciences (SHUATS)",
+  state: "Uttar Pradesh",
+  city: "Prayagraj",
+  type: "Agriculture",
+  image: "/Sam Higginbottom University of Agriculture Technology and Sciences Prayagraj.jpg",
+},
+
+// === Arunachal Pradesh Agriculture Colleges ===
+{
+  name: "College of Horticulture and Forestry, Pasighat",
+  state: "Arunachal Pradesh",
+  city: "Pasighat",
+  type: "Agriculture",
+  image: "/College of Horticulture and Forestry Pasighat.jpg",
+},
+{
+  name: "North Eastern Regional Institute of Science and Technology (NERIST)",
+  state: "Arunachal Pradesh",
+  city: "Itanagar",
+  type: "Agriculture",
+  image: "/North Eastern Regional Institute of Science and Technology Itanagar.jpg",
+},
+{
+  name: "College of Agriculture, Pasighat",
+  state: "Arunachal Pradesh",
+  city: "Pasighat",
+  type: "Agriculture",
+  image: "/College of Agriculture Pasighat Arunachal.jpg",
+},
+{
+  name: "Krishi Vigyan Kendra, Dirang",
+  state: "Arunachal Pradesh",
+  city: "Dirang",
+  type: "Agriculture",
+  image: "/Krishi Vigyan Kendra Dirang Arunachal Pradesh.jpg",
+},
+{
+  name: "Krishi Vigyan Kendra, Papum Pare",
+  state: "Arunachal Pradesh",
+  city: "Papum Pare",
+  type: "Agriculture",
+  image: "/Krishi Vigyan Kendra Papum Pare Arunachal Pradesh.jpg",
+},
+
 ];
 
 const states = [
@@ -88,6 +416,7 @@ const states = [
   "Odisha",
   "West Bengal",
   "Uttar Pradesh",
+  "Arunachal Pradesh",
 ];
 
 export default function TopAgricultureColleges() {
@@ -195,6 +524,7 @@ export default function TopAgricultureColleges() {
           </motion.p>
         )}
       </div>
+      <OurOffices/>
       <NewsletterSection />
     </>
   );

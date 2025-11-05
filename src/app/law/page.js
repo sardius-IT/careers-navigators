@@ -5,6 +5,7 @@ import Image from "next/image";
 import { MapPin } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import NewsletterSection from "../../app/NewsletterSection/page";
+import OurOffices from "../../components/OurOffices";
 const colleges = [
   // === Tamil Nadu Law Colleges ===
   {
@@ -90,6 +91,339 @@ const colleges = [
     type: "Law",
     image: "/colleges/du_law.jpg",
   },
+  // === Kerala Law Colleges ===
+{
+  name: "Government Law College, Thiruvananthapuram",
+  state: "Kerala",
+  city: "Thiruvananthapuram",
+  type: "Law",
+  image: "/Government Law College Thiruvananthapuram.jpg",
+},
+{
+  name: "National University of Advanced Legal Studies (NUALS)",
+  state: "Kerala",
+  city: "Kochi",
+  type: "Law",
+  image: "/National University of Advanced Legal Studies Kochi.jpg",
+},
+{
+  name: "Government Law College, Ernakulam",
+  state: "Kerala",
+  city: "Ernakulam",
+  type: "Law",
+  image: "/Government Law College Ernakulam.jpg",
+},
+{
+  name: "Kerala Law Academy Law College",
+  state: "Kerala",
+  city: "Thiruvananthapuram",
+  type: "Law",
+  image: "/Kerala Law Academy Law College Thiruvananthapuram.jpg",
+},
+{
+  name: "Mar Gregorios College of Law",
+  state: "Kerala",
+  city: "Thiruvananthapuram",
+  type: "Law",
+  image: "/Mar Gregorios College of Law Thiruvananthapuram.jpg",
+},
+
+// === Andhra Pradesh Law Colleges ===
+{
+  name: "Damodaram Sanjivayya National Law University (DSNLU)",
+  state: "Andhra Pradesh",
+  city: "Visakhapatnam",
+  type: "Law",
+  image: "/Damodaram Sanjivayya National Law University Visakhapatnam.jpg",
+},
+{
+  name: "Dr. B.R. Ambedkar College of Law, Andhra University",
+  state: "Andhra Pradesh",
+  city: "Visakhapatnam",
+  type: "Law",
+  image: "/Dr BR Ambedkar College of Law Visakhapatnam.jpg",
+},
+{
+  name: "S.K.R. Government Law College",
+  state: "Andhra Pradesh",
+  city: "Anantapur",
+  type: "Law",
+  image: "/SKR Government Law College Anantapur.jpg",
+},
+{
+  name: "D.N.R. College of Law",
+  state: "Andhra Pradesh",
+  city: "Bhimavaram",
+  type: "Law",
+  image: "/DNR College of Law Bhimavaram.jpg",
+},
+{
+  name: "VR Law College",
+  state: "Andhra Pradesh",
+  city: "Nellore",
+  type: "Law",
+  image: "/VR Law College Nellore.jpg",
+},
+
+// === Gujarat Law Colleges ===
+{
+  name: "Gujarat National Law University (GNLU)",
+  state: "Gujarat",
+  city: "Gandhinagar",
+  type: "Law",
+  image: "/Gujarat National Law University Gandhinagar.jpg",
+},
+{
+  name: "Faculty of Law, Maharaja Sayajirao University",
+  state: "Gujarat",
+  city: "Vadodara",
+  type: "Law",
+  image: "/Faculty of Law Maharaja Sayajirao University Vadodara.jpg",
+},
+{
+  name: "Sir L.A. Shah Law College",
+  state: "Gujarat",
+  city: "Ahmedabad",
+  type: "Law",
+  image: "/Sir LA Shah Law College Ahmedabad.jpg",
+},
+{
+  name: "Nirma University, Institute of Law",
+  state: "Gujarat",
+  city: "Ahmedabad",
+  type: "Law",
+  image: "/Nirma University Institute of Law Ahmedabad.jpg",
+},
+{
+  name: "Siddharth Law College",
+  state: "Gujarat",
+  city: "Gandhinagar",
+  type: "Law",
+  image: "/Siddharth Law College Gandhinagar.jpg",
+},
+
+// === Telangana Law Colleges ===
+{
+  name: "NALSAR University of Law",
+  state: "Telangana",
+  city: "Hyderabad",
+  type: "Law",
+  image: "/NALSAR University of Law Hyderabad.jpg",
+},
+{
+  name: "University College of Law, Osmania University",
+  state: "Telangana",
+  city: "Hyderabad",
+  type: "Law",
+  image: "/University College of Law Osmania University Hyderabad.jpg",
+},
+{
+  name: "Kakatiya University College of Law",
+  state: "Telangana",
+  city: "Warangal",
+  type: "Law",
+  image: "/Kakatiya University College of Law Warangal.jpg",
+},
+{
+  name: "Pendekanti Law College",
+  state: "Telangana",
+  city: "Hyderabad",
+  type: "Law",
+  image: "/Pendekanti Law College Hyderabad.jpg",
+},
+{
+  name: "Mahatma Gandhi Law College",
+  state: "Telangana",
+  city: "Hyderabad",
+  type: "Law",
+  image: "/Mahatma Gandhi Law College Hyderabad.jpg",
+},
+
+// === Madhya Pradesh Law Colleges ===
+{
+  name: "National Law Institute University (NLIU)",
+  state: "Madhya Pradesh",
+  city: "Bhopal",
+  type: "Law",
+  image: "/National Law Institute University Bhopal.jpg",
+},
+{
+  name: "Faculty of Law, Barkatullah University",
+  state: "Madhya Pradesh",
+  city: "Bhopal",
+  type: "Law",
+  image: "/Faculty of Law Barkatullah University Bhopal.jpg",
+},
+{
+  name: "School of Law, Devi Ahilya Vishwavidyalaya",
+  state: "Madhya Pradesh",
+  city: "Indore",
+  type: "Law",
+  image: "/School of Law Devi Ahilya Vishwavidyalaya Indore.jpg",
+},
+{
+  name: "Hitkarini Law College",
+  state: "Madhya Pradesh",
+  city: "Jabalpur",
+  type: "Law",
+  image: "/Hitkarini Law College Jabalpur.jpg",
+},
+{
+  name: "Government State Law College",
+  state: "Madhya Pradesh",
+  city: "Bhopal",
+  type: "Law",
+  image: "/Government State Law College Bhopal.jpg",
+},
+
+// === Odisha Law Colleges ===
+{
+  name: "National Law University Odisha (NLUO)",
+  state: "Odisha",
+  city: "Cuttack",
+  type: "Law",
+  image: "/National Law University Odisha Cuttack.jpg",
+},
+{
+  name: "University Law College, Utkal University",
+  state: "Odisha",
+  city: "Bhubaneswar",
+  type: "Law",
+  image: "/University Law College Utkal University Bhubaneswar.jpg",
+},
+{
+  name: "M.S. Law College",
+  state: "Odisha",
+  city: "Cuttack",
+  type: "Law",
+  image: "/MS Law College Cuttack.jpg",
+},
+{
+  name: "Capital Law College",
+  state: "Odisha",
+  city: "Bhubaneswar",
+  type: "Law",
+  image: "/Capital Law College Bhubaneswar.jpg",
+},
+{
+  name: "The Law College, Sambalpur University",
+  state: "Odisha",
+  city: "Sambalpur",
+  type: "Law",
+  image: "/The Law College Sambalpur University.jpg",
+},
+
+// === West Bengal Law Colleges ===
+{
+  name: "The West Bengal National University of Juridical Sciences (WBNUJS)",
+  state: "West Bengal",
+  city: "Kolkata",
+  type: "Law",
+  image: "/West Bengal National University of Juridical Sciences Kolkata.jpg",
+},
+{
+  name: "Department of Law, University of Calcutta",
+  state: "West Bengal",
+  city: "Kolkata",
+  type: "Law",
+  image: "/Department of Law University of Calcutta.jpg",
+},
+{
+  name: "South Calcutta Law College",
+  state: "West Bengal",
+  city: "Kolkata",
+  type: "Law",
+  image: "/South Calcutta Law College Kolkata.jpg",
+},
+{
+  name: "Snehangshu Kanta Acharya Institute of Law",
+  state: "West Bengal",
+  city: "Kalyani",
+  type: "Law",
+  image: "/Snehangshu Kanta Acharya Institute of Law Kalyani.jpg",
+},
+{
+  name: "Jogesh Chandra Chaudhuri Law College",
+  state: "West Bengal",
+  city: "Kolkata",
+  type: "Law",
+  image: "/Jogesh Chandra Chaudhuri Law College Kolkata.jpg",
+},
+
+// === Uttar Pradesh Law Colleges ===
+{
+  name: "Dr. Ram Manohar Lohiya National Law University (RMLNLU)",
+  state: "Uttar Pradesh",
+  city: "Lucknow",
+  type: "Law",
+  image: "/Dr Ram Manohar Lohiya National Law University Lucknow.jpg",
+},
+{
+  name: "Faculty of Law, Banaras Hindu University (BHU)",
+  state: "Uttar Pradesh",
+  city: "Varanasi",
+  type: "Law",
+  image: "/Faculty of Law Banaras Hindu University Varanasi.jpg",
+},
+{
+  name: "Aligarh Muslim University Faculty of Law",
+  state: "Uttar Pradesh",
+  city: "Aligarh",
+  type: "Law",
+  image: "/Aligarh Muslim University Faculty of Law Aligarh.jpg",
+},
+{
+  name: "Lloyd Law College",
+  state: "Uttar Pradesh",
+  city: "Greater Noida",
+  type: "Law",
+  image: "/Lloyd Law College Greater Noida.jpg",
+},
+{
+  name: "Amity Law School, Amity University",
+  state: "Uttar Pradesh",
+  city: "Noida",
+  type: "Law",
+  image: "/Amity Law School Noida.jpg",
+},
+
+// === Arunachal Pradesh Law Colleges ===
+{
+  name: "Arunachal Law Academy",
+  state: "Arunachal Pradesh",
+  city: "Itanagar",
+  type: "Law",
+  image: "/Arunachal Law Academy Itanagar.jpg",
+},
+{
+  name: "Tomo Riba Institute of Law Studies",
+  state: "Arunachal Pradesh",
+  city: "Naharlagun",
+  type: "Law",
+  image: "/Tomo Riba Institute of Law Studies Naharlagun.jpg",
+},
+{
+  name: "Indira Gandhi Government College (Law Department)",
+  state: "Arunachal Pradesh",
+  city: "Tezu",
+  type: "Law",
+  image: "/Indira Gandhi Government College Tezu Law Department.jpg",
+},
+{
+  name: "Dera Natung Government College (Law Faculty)",
+  state: "Arunachal Pradesh",
+  city: "Itanagar",
+  type: "Law",
+  image: "/Dera Natung Government College Itanagar Law Faculty.jpg",
+},
+{
+  name: "North Eastern Regional Institute of Law and Research",
+  state: "Arunachal Pradesh",
+  city: "Pasighat",
+  type: "Law",
+  image: "/North Eastern Regional Institute of Law and Research Pasighat.jpg",
+},
+
 ];
 
 const states = [
@@ -104,6 +438,7 @@ const states = [
   "Madhya Pradesh",
   "Odisha",
   "Uttar Pradesh",
+  "Arunachal Pradesh",
 ];
 
 export default function TopLawColleges() {
@@ -209,6 +544,7 @@ export default function TopLawColleges() {
           </motion.p>
         )}
       </div>
+      <OurOffices/>
       <NewsletterSection />
     </>
   );
