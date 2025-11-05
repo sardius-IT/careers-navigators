@@ -12,7 +12,7 @@ export default function Navbar() {
       {/* Left Section: Logo + Title */}
       <div className="flex items-center gap-3">
         <Image
-          src="/imgi_1_logo.gif" // replace with your logo image path
+          src="/logo-removebg-preview.png" // replace with your logo image path
           alt="IRST Logo"
           className="w-12 h-12 rounded-full"
         />

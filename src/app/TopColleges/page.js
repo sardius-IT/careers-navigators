@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 import { CheckCircle } from "lucide-react";
 
 const colleges = [
@@ -45,8 +45,9 @@ const colleges = [
 
 export default function TopColleges() {
   const scrollRef = useRef(null);
+  const [showAll, setShowAll] = useState(false);
 
-  // 🖱 Scroll horizontally with mouse wheel
+  // Scroll horizontally with mouse wheel
   useEffect(() => {
     const el = scrollRef.current;
     if (!el) return;
@@ -64,8 +65,11 @@ export default function TopColleges() {
     return () => el.removeEventListener("wheel", handleWheel);
   }, []);
 
+  // Display either 3 or all colleges
+  const displayedColleges = showAll ? colleges : colleges.slice(0, 3);
+
   return (
-    <section className="py-16  bg-white">
+    <section className="py-16 bg-white">
       <div className="max-w-7xl mx-auto px-6 text-center">
         {/* Heading */}
         <motion.h2
@@ -82,17 +86,17 @@ export default function TopColleges() {
         </p>
 
         {/* Horizontal Scroll */}
-        <div
+        <motion.div
           ref={scrollRef}
-          className="flex gap-6 overflow-x-auto no-scrollbar scroll-smooth pb-6 "
+          className="flex gap-6 overflow-x-auto no-scrollbar scroll-smooth pb-6 justify-center flex-wrap"
+          layout
         >
-          {colleges.map((college, index) => (
+          {displayedColleges.map((college, index) => (
             <motion.div
               key={college.id}
               initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: index * 0.1 }}
-              viewport={{ once: true }}
               whileHover={{ scale: 1.03 }}
               className="min-w-[250px] bg-white rounded-xl shadow-md hover:shadow-xl 
                          overflow-hidden border border-gray-100 transition-all duration-300"
@@ -111,7 +115,9 @@ export default function TopColleges() {
               <div className="p-4 text-left">
                 <div className="flex items-center gap-2 mb-1">
                   <CheckCircle size={14} className="text-green-500" />
-                  <span className="text-green-600 text-sm font-semibold">{college.status}</span>
+                  <span className="text-green-600 text-sm font-semibold">
+                    {college.status}
+                  </span>
                 </div>
                 <h3 className="font-semibold text-gray-800 text-base leading-snug">
                   {college.name}
@@ -120,16 +126,17 @@ export default function TopColleges() {
               </div>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
 
         {/* Button */}
         <div className="mt-8">
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.97 }}
+            onClick={() => setShowAll(!showAll)}
             className="px-6 py-3 bg-blue-600 text-white font-semibold rounded-full shadow-md hover:bg-blue-700 transition"
           >
-            View More Colleges
+            {showAll ? "Show Less Colleges" : "View More Colleges"}
           </motion.button>
         </div>
       </div>

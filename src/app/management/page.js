@@ -5,6 +5,7 @@ import Image from "next/image";
 import { MapPin } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import NewsletterSection from "../../app/NewsletterSection/page";
+import OurOffices from "../../components/OurOffices";
 
 const colleges = [
   // === Tamil Nadu Management Colleges ===
@@ -13,21 +14,21 @@ const colleges = [
     state: "Tamil Nadu",
     city: "Tiruchirappalli",
     type: "Management",
-    image: "/colleges/iimtrichy.jpg",
+    image: "/indian institute of technology nagpur images.jpg",
   },
   {
     name: "Loyola Institute of Business Administration (LIBA)",
     state: "Tamil Nadu",
     city: "Chennai",
     type: "Management",
-    image: "/colleges/liba.jpg",
+    image: "/loyola institute of business administration.jpg",
   },
   {
     name: "Great Lakes Institute of Management",
     state: "Tamil Nadu",
     city: "Chennai",
     type: "Management",
-    image: "/colleges/greatlakes.jpg",
+    image: "/great lakes institute of management.jpg",
   },
 
   // === Bangalore Management Colleges ===
@@ -36,21 +37,21 @@ const colleges = [
     state: "Bangalore",
     city: "Bangalore",
     type: "Management",
-    image: "/colleges/iimb.jpg",
+    image: "/indian institute of management bangalore.jpg",
   },
   {
     name: "Alliance School of Business",
     state: "Bangalore",
     city: "Bangalore",
     type: "Management",
-    image: "/colleges/alliance.jpg",
+    image: "/alliance school of business.jpg",
   },
   {
     name: "Christ University - School of Business and Management",
     state: "Bangalore",
     city: "Bangalore",
     type: "Management",
-    image: "/colleges/christ.jpg",
+    image: "/christ university school of business and management bangalore.jpg",
   },
 
   // === Maharashtra Management Colleges ===
@@ -59,22 +60,357 @@ const colleges = [
     state: "Maharashtra",
     city: "Nagpur",
     type: "Management",
-    image: "/colleges/iimnagpur.jpg",
+    image: "/indian institute of technology nagpur images.jpg",
   },
   {
     name: "Jamnalal Bajaj Institute of Management Studies (JBIMS)",
     state: "Maharashtra",
     city: "Mumbai",
     type: "Management",
-    image: "/colleges/jbims.jpg",
+    image: "/jamnalal bajaj institute of management studies.jpg",
   },
   {
     name: "Symbiosis Institute of Business Management (SIBM)",
     state: "Maharashtra",
     city: "Pune",
     type: "Management",
-    image: "/colleges/sibm.jpg",
+    image: "/symbiosis institute of business management maharashtra.jpg",
   },
+ 
+
+// === Kerala Management Colleges ===
+{
+  name: "Indian Institute of Management Kozhikode (IIM Kozhikode)",
+  state: "Kerala",
+  city: "Kozhikode",
+  type: "Management",
+  image: "/IIM-Kozhikode.jpg",
+},
+{
+  name: "Rajagiri Centre for Business Studies",
+  state: "Kerala",
+  city: "Kochi",
+  type: "Management",
+  image: "/Rajagiri-Centre-for-Business-Studies.jpg",
+},
+{
+  name: "SCMS Cochin School of Business",
+  state: "Kerala",
+  city: "Cochin",
+  type: "Management",
+  image: "/SCMS-Cochin.jpg",
+},
+{
+  name: "Amrita School of Business (Kochi Campus)",
+  state: "Kerala",
+  city: "Kochi",
+  type: "Management",
+  image: "/Amrita-School-of-Business-Kochi.jpg",
+},
+{
+  name: "DC School of Management and Technology (DCSMAT)",
+  state: "Kerala",
+  city: "Vagamon",
+  type: "Management",
+  image: "/DCSMAT-Vagamon.jpg",
+},
+
+// === Andhra Pradesh Management Colleges ===
+{
+  name: "Indian Institute of Management Visakhapatnam (IIM Vizag)",
+  state: "Andhra Pradesh",
+  city: "Visakhapatnam",
+  type: "Management",
+  image: "/IIM-Visakhapatnam.jpg",
+},
+{
+  name: "GITAM School of Business",
+  state: "Andhra Pradesh",
+  city: "Visakhapatnam",
+  type: "Management",
+  image: "/GITAM-School-of-Business.jpg",
+},
+{
+  name: "KL Business School (KL University)",
+  state: "Andhra Pradesh",
+  city: "Guntur",
+  type: "Management",
+  image: "/KL-Business-School.jpg",
+},
+{
+  name: "Vignan Institute of Information Technology - School of Management",
+  state: "Andhra Pradesh",
+  city: "Visakhapatnam",
+  type: "Management",
+  image: "/Vignan-School-of-Management.jpg",
+},
+{
+  name: "Andhra University School of Management Studies",
+  state: "Andhra Pradesh",
+  city: "Visakhapatnam",
+  type: "Management",
+  image: "/Andhra-University-School-of-Management.jpg",
+},
+
+// === Gujarat Management Colleges ===
+{
+  name: "Indian Institute of Management Ahmedabad (IIM Ahmedabad)",
+  state: "Gujarat",
+  city: "Ahmedabad",
+  type: "Management",
+  image: "/IIM-Ahmedabad.jpg",
+},
+{
+  name: "Institute of Management, Nirma University",
+  state: "Gujarat",
+  city: "Ahmedabad",
+  type: "Management",
+  image: "/Nirma-University-Management.jpg",
+},
+{
+  name: "Pandit Deendayal Energy University (School of Management)",
+  state: "Gujarat",
+  city: "Gandhinagar",
+  type: "Management",
+  image: "/PDEU-School-of-Management.jpg",
+},
+{
+  name: "B.K. School of Professional and Management Studies",
+  state: "Gujarat",
+  city: "Ahmedabad",
+  type: "Management",
+  image: "/BK-School-of-Management.jpg",
+},
+{
+  name: "Entrepreneurship Development Institute of India (EDII)",
+  state: "Gujarat",
+  city: "Gandhinagar",
+  type: "Management",
+  image: "/EDII-Gandhinagar.jpg",
+},
+
+// === Telangana Management Colleges ===
+{
+  name: "Indian School of Business (ISB Hyderabad)",
+  state: "Telangana",
+  city: "Hyderabad",
+  type: "Management",
+  image: "/ISB-Hyderabad.jpg",
+},
+{
+  name: "Institute of Public Enterprise (IPE)",
+  state: "Telangana",
+  city: "Hyderabad",
+  type: "Management",
+  image: "/IPE-Hyderabad.jpg",
+},
+{
+  name: "ICFAI Business School (IBS Hyderabad)",
+  state: "Telangana",
+  city: "Hyderabad",
+  type: "Management",
+  image: "/IBS-Hyderabad.jpg",
+},
+{
+  name: "Vignana Jyothi Institute of Management (VJIM)",
+  state: "Telangana",
+  city: "Hyderabad",
+  type: "Management",
+  image: "/VJIM-Hyderabad.jpg",
+},
+{
+  name: "GITAM Hyderabad Business School",
+  state: "Telangana",
+  city: "Hyderabad",
+  type: "Management",
+  image: "/GITAM-Hyderabad-Business-School.jpg",
+},
+
+// === Madhya Pradesh Management Colleges ===
+{
+  name: "Indian Institute of Management Indore (IIM Indore)",
+  state: "Madhya Pradesh",
+  city: "Indore",
+  type: "Management",
+  image: "/IIM-Indore.jpg",
+},
+{
+  name: "Institute of Management Studies, DAVV",
+  state: "Madhya Pradesh",
+  city: "Indore",
+  type: "Management",
+  image: "/IMS-DAVV-Indore.jpg",
+},
+{
+  name: "Prestige Institute of Management and Research (PIMR)",
+  state: "Madhya Pradesh",
+  city: "Indore",
+  type: "Management",
+  image: "/PIMR-Indore.jpg",
+},
+{
+  name: "Indian Institute of Forest Management (IIFM)",
+  state: "Madhya Pradesh",
+  city: "Bhopal",
+  type: "Management",
+  image: "/IIFM-Bhopal.jpg",
+},
+{
+  name: "VIT Business School, Bhopal",
+  state: "Madhya Pradesh",
+  city: "Bhopal",
+  type: "Management",
+  image: "/VIT-Business-School-Bhopal.jpg",
+},
+
+// === Odisha Management Colleges ===
+{
+  name: "Xavier Institute of Management Bhubaneswar (XIMB)",
+  state: "Odisha",
+  city: "Bhubaneswar",
+  type: "Management",
+  image: "/XIMB.jpg",
+},
+{
+  name: "KIIT School of Management (KSOM)",
+  state: "Odisha",
+  city: "Bhubaneswar",
+  type: "Management",
+  image: "/KSOM-Bhubaneswar.jpg",
+},
+{
+  name: "Institute of Management and Information Science (IMIS)",
+  state: "Odisha",
+  city: "Bhubaneswar",
+  type: "Management",
+  image: "/IMIS-Bhubaneswar.jpg",
+},
+{
+  name: "Birla Global University - School of Management",
+  state: "Odisha",
+  city: "Bhubaneswar",
+  type: "Management",
+  image: "/Birla-Global-University.jpg",
+},
+{
+  name: "Regional College of Management (RCM)",
+  state: "Odisha",
+  city: "Bhubaneswar",
+  type: "Management",
+  image: "/RCM-Bhubaneswar.jpg",
+},
+
+// === West Bengal Management Colleges ===
+{
+  name: "Indian Institute of Management Calcutta (IIM Calcutta)",
+  state: "West Bengal",
+  city: "Kolkata",
+  type: "Management",
+  image: "/IIM-Calcutta.jpg",
+},
+{
+  name: "Indian Institute of Social Welfare and Business Management (IISWBM)",
+  state: "West Bengal",
+  city: "Kolkata",
+  type: "Management",
+  image: "/IISWBM-Kolkata.jpg",
+},
+{
+  name: "International Management Institute (IMI Kolkata)",
+  state: "West Bengal",
+  city: "Kolkata",
+  type: "Management",
+  image: "/IMI-Kolkata.jpg",
+},
+{
+  name: "Army Institute of Management Kolkata (AIMK)",
+  state: "West Bengal",
+  city: "Kolkata",
+  type: "Management",
+  image: "/AIMK-Kolkata.jpg",
+},
+{
+  name: "Globsyn Business School",
+  state: "West Bengal",
+  city: "Kolkata",
+  type: "Management",
+  image: "/Globsyn-Business-School.jpg",
+},
+
+// === Uttar Pradesh Management Colleges ===
+{
+  name: "Indian Institute of Management Lucknow (IIM Lucknow)",
+  state: "Uttar Pradesh",
+  city: "Lucknow",
+  type: "Management",
+  image: "/IIM-Lucknow.jpg",
+},
+{
+  name: "Institute of Management Technology (IMT Ghaziabad)",
+  state: "Uttar Pradesh",
+  city: "Ghaziabad",
+  type: "Management",
+  image: "/IMT-Ghaziabad.jpg",
+},
+{
+  name: "Amity Business School",
+  state: "Uttar Pradesh",
+  city: "Noida",
+  type: "Management",
+  image: "/Amity-Business-School.jpg",
+},
+{
+  name: "Jaipuria Institute of Management",
+  state: "Uttar Pradesh",
+  city: "Lucknow",
+  type: "Management",
+  image: "/Jaipuria-Institute-of-Management.jpg",
+},
+{
+  name: "Birla Institute of Management Technology (BIMTECH)",
+  state: "Uttar Pradesh",
+  city: "Greater Noida",
+  type: "Management",
+  image: "/BIMTECH.jpg",
+},
+// === Arunachal Pradesh Management Colleges ===
+{
+  name: "Rajiv Gandhi University – Department of Management",
+  state: "Arunachal Pradesh",
+  city: "Doimukh, Itanagar",
+  type: "Management",
+  image: "/Rajiv-Gandhi-University-Department-of-Management.jpg",
+},
+{
+  name: "North Eastern Regional Institute of Science and Technology (NERIST) – Centre for Management Studies",
+  state: "Arunachal Pradesh",
+  city: "Nirjuli, Itanagar",
+  type: "Management",
+  image: "/NERIST-Centre-for-Management-Studies.jpg",
+},
+{
+  name: "Himalayan University – School of Business and Management",
+  state: "Arunachal Pradesh",
+  city: "Itanagar",
+  type: "Management",
+  image: "/Himalayan-University-School-of-Business-and-Management.jpg",
+},
+{
+  name: "Arunachal University of Studies – Faculty of Management",
+  state: "Arunachal Pradesh",
+  city: "Namsai",
+  type: "Management",
+  image: "/Arunachal-University-of-Studies-Faculty-of-Management.jpg",
+},
+{
+  name: "Indira Gandhi Technological and Medical Sciences University (IGTAMSU) – School of Management",
+  state: "Arunachal Pradesh",
+  city: "Ziro",
+  type: "Management",
+  image: "/IGTAMSU-School-of-Management.jpg",
+},
+
+
 ];
 
 const states = [
@@ -196,6 +532,7 @@ export default function TopManagementColleges() {
           </motion.p>
         )}
       </div>
+      <OurOffices/>
       <NewsletterSection />
     </>
   );

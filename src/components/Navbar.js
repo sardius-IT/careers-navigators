@@ -8,6 +8,7 @@ import Image from "next/image";
 
 export default function Navbar() {
   const categories = [
+    
     { name: "Engineering", path: "/engineering", icon: "👷‍♂️" },
     { name: "Management", path: "/management", icon: "👔" },
     { name: "Medical", path: "/medical", icon: "📞" },
@@ -34,24 +35,23 @@ export default function Navbar() {
 
   return (
     <>
-      <header className="w-full bg-white  shadow-2xl sticky top-0 z-[100]">
+      <header className="w-full bg-white shadow-2xl sticky top-0 z-[100]">
         <div className="flex items-center justify-between px-6 py-4">
-          {/* Logo */}
-         <div className="flex items-center gap-2">
-  <Link href="/hero" className="cursor-pointer">
-    <Image
-  src="/logo.png"
-  alt="Logo"
-  width={180}  // ✅ required
-  height={150}  // ✅ required
-  className="object-contain hover:opacity-80 transition-opacity"
-/>
+          {/* ===== Logo ===== */}
+          <div className="flex items-center gap-2">
+            <Link href="/hero" className="cursor-pointer">
+              <Image
+                src="/logo.png"
+                alt="Logo"
+                width={180}
+                height={150}
+                className="object-contain hover:opacity-80 transition-opacity"
+                priority
+              />
+            </Link>
+          </div>
 
-  </Link>
-</div>
-
-
-          {/* Desktop Menu */}
+          {/* ===== Desktop Menu ===== */}
           <div className="hidden md:flex gap-3 text-sm">
             {categories.map((cat) => (
               <Link
@@ -68,7 +68,7 @@ export default function Navbar() {
             ))}
           </div>
 
-          {/* Book Call */}
+          {/* ===== Book Call Button ===== */}
           <Link
             href="/book-call"
             className="px-6 py-2 bg-gradient-to-r from-blue-500 to-indigo-500 text-white rounded-full shadow-md hover:scale-105 transition"
@@ -76,7 +76,7 @@ export default function Navbar() {
             Book Call
           </Link>
 
-          {/* Mobile Toggle */}
+          {/* ===== Mobile Toggle ===== */}
           <button
             className="md:hidden p-2 rounded-md hover:bg-gray-100 transition ml-2"
             onClick={() => setMenuOpen(!menuOpen)}
@@ -85,7 +85,7 @@ export default function Navbar() {
           </button>
         </div>
 
-        {/* Desktop Sub Menu */}
+        {/* ===== Desktop Sub Menu ===== */}
         <div
           className="hidden md:flex justify-center gap-2 pb-3 relative w-full z-[200]"
           ref={dropdownRef}
@@ -107,50 +107,26 @@ export default function Navbar() {
           >
             Ranking
           </Link>
-
-          <button
-            onClick={() => setShowPromotion(!showPromotion)}
-            className="px-4 py-1 rounded-full font-medium bg-lime-100 hover:bg-lime-200 transition"
-          >
-            Promotion ▼
-          </button>
-
-          {showPromotion && (
-            <div className="absolute top-12 bg-white shadow-lg rounded-xl p-3 flex flex-col gap-2 w-56 border z-[500]">
-              <Link
-                href="/promotion/education-fair"
-                className="flex items-center gap-2 hover:bg-gray-100 p-2 rounded-lg transition"
-              >
-                <Image src="/education-fair-logo.png" alt="Education Fair" className="h-6" />
-                <span>Education Fair-2025</span>
-              </Link>
-              <Link
-                href="/promotion/irst-lms"
-                className="flex items-center gap-2 hover:bg-gray-100 p-2 rounded-lg transition"
-              >
-                <Image src="/irst-lms-logo.png" alt="IRST-LMS" className="h-6" />
-                <span>IRST-LMS</span>
-              </Link>
-              <Link
-                href="/promotion/job"
-                className="flex items-center gap-2 hover:bg-gray-100 p-2 rounded-lg transition"
-              >
-                <Image src="/job-logo.png" alt="Job" className="h-6" />
-                <span>Job</span>
-              </Link>
-            </div>
-          )}
         </div>
 
-        {/* Mobile Drawer Menu */}
+        {/* ===== Mobile Drawer Menu ===== */}
         {menuOpen && (
-          <div className="fixed inset-0 bg-black/50 z-[300] md:hidden" onClick={() => setMenuOpen(false)}>
+          <div
+            className="fixed inset-0 bg-black/50 z-[300] md:hidden"
+            onClick={() => setMenuOpen(false)}
+          >
             <div
               className="absolute top-0 left-0 h-full w-72 bg-white shadow-2xl rounded-r-2xl p-5 flex flex-col gap-3 animate-slideIn"
               onClick={(e) => e.stopPropagation()}
             >
               <div className="flex justify-between items-center mb-4">
-                <Image src="/logo.png" alt="Logo" className="h-10" />
+                <Image
+                  src="/logo.png"
+                  alt="Logo"
+                  width={120}
+                  height={80}
+                  className="object-contain"
+                />
                 <X
                   size={24}
                   className="cursor-pointer hover:text-red-500"
@@ -158,14 +134,16 @@ export default function Navbar() {
                 />
               </div>
 
-              {/* Categories */}
+              {/* ===== Categories ===== */}
               {categories.map((cat) => (
                 <Link
                   key={cat.path}
                   href={cat.path}
                   onClick={() => setMenuOpen(false)}
                   className={`flex items-center gap-3 py-3 text-base font-medium rounded-lg transition ${
-                    pathname === cat.path ? "bg-blue-50 text-blue-700" : "hover:bg-gray-50"
+                    pathname === cat.path
+                      ? "bg-blue-50 text-blue-700"
+                      : "hover:bg-gray-50"
                   }`}
                 >
                   <span className="text-lg">{cat.icon}</span>
@@ -175,7 +153,7 @@ export default function Navbar() {
 
               <hr className="my-3" />
 
-              {/* Sub Actions */}
+              {/* ===== Sub Actions ===== */}
               <Link
                 href="/all-courses"
                 onClick={() => setMenuOpen(false)}
@@ -192,31 +170,14 @@ export default function Navbar() {
                 Ranking
               </Link>
 
-              <button
-                onClick={() => setShowPromotion(!showPromotion)}
-                className="w-full text-center py-2 rounded-lg font-semibold bg-gradient-to-r from-lime-100 to-lime-200 hover:from-lime-200 hover:to-lime-300 transition"
-              >
-                Promotion ▼
-              </button>
-
-              {showPromotion && (
-                <div className="flex flex-col mt-2 bg-white border rounded-xl shadow-md p-3">
-                  <Link href="/promotion/education-fair" className="py-2 hover:bg-gray-50 rounded-md">
-                    Education Fair-2025
-                  </Link>
-                  <Link href="/promotion/irst-lms" className="py-2 hover:bg-gray-50 rounded-md">
-                    IRST-LMS
-                  </Link>
-                  <Link href="/promotion/job" className="py-2 hover:bg-gray-50 rounded-md">
-                    Job
-                  </Link>
-                </div>
-              )}
+             
+              
             </div>
           </div>
         )}
       </header>
 
+      {/* ===== Animation Styles ===== */}
       <style jsx>{`
         @keyframes slideIn {
           from {
@@ -235,4 +196,3 @@ export default function Navbar() {
     </>
   );
 }
-

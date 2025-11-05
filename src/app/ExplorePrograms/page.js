@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
 
 // Filter buttons
 const programFilters = [
@@ -69,7 +70,6 @@ const cards = [
     categories: ["BE/B.Tech", "MBA/PGDM", "ME/M.Tech", "B.Sc", "BA"],
   },
 ];
-
 
 export default function ExplorePrograms() {
   const [selectedFilter, setSelectedFilter] = useState("All");
@@ -153,13 +153,13 @@ export default function ExplorePrograms() {
                   ))}
                 </div>
 
-                {/* Link */}
-                <a
-                  href="#"
+                {/* ✅ Link to All Courses Page */}
+                <Link
+                  href="/all-courses"
                   className="text-green-600 text-sm font-medium hover:underline"
                 >
                   {card.link}
-                </a>
+                </Link>
               </motion.div>
             ))}
           </AnimatePresence>

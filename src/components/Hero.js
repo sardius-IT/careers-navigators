@@ -8,6 +8,10 @@ import ExplorePrograms from "../app/ExplorePrograms/page";
 import TopUniversities from "../app/TopUniversities/page";
 import TopColleges from "../app/TopColleges/page";
 import NewsletterSection from "../app/NewsletterSection/page";
+import CollegeRank from "../app/CollegeRank/page";
+import Coranking from "../app/college-ranking/page";
+import AdmissionAndStudyAbroad from "../app/AdmissionAndStudyAbroad/page";
+import OurOffices from "../components/OurOffices";
 export default function Hero() {
   // 👇 Add multiple background images
   const images = [
@@ -68,6 +72,16 @@ export default function Hero() {
 }, [texts]);
 
 
+const places = [
+  { name: "Chennai", emoji: "🐚🌊" },
+  { name: "Karnataka", emoji: "🏙" },
+  { name: "Hyderabad", emoji: "🕌" },
+  { name: "Delhi NCR", emoji: "🏛" },
+  { name: "Pune", emoji: "🏞" },
+  { name: "Mumbai", emoji: "🏢" },
+  { name: "Kolkata", emoji: "📜" },
+];
+
   return (
     <>
       <section
@@ -109,11 +123,37 @@ export default function Hero() {
         <TopUniversities />
       
         <TopColleges />
-         <section className="bg-green-50 py-10 text-center rounded-xl shadow-inner max-w-4xl mx-auto mb-10 px-4">
-        <h3 className="text-2xl font-bold text-green-800 mb-3">HelpDesk</h3>
-        <p>📞 +91 9155234444 | 📧 admissions@irst.edu.in</p>
-        <p>Support Hours: Mon–Sat | 9:00 AM – 5:00 PM</p>
-      </section>
+        <CollegeRank/>
+        <Coranking/>
+    <section className="py-12 bg-white">
+      <div className="max-w-6xl mx-auto px-4">
+        {/* Heading */}
+        <h2 className="text-2xl md:text-3xl font-semibold text-center mb-10 text-gray-800">
+          Top Study Places
+        </h2>
+
+        {/* Grid of Places */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-5 justify-items-center">
+          {places.map((place, index) => (
+            <div
+              key={index}
+              className="flex flex-col items-center justify-center bg-gradient-to-b from-gray-50 to-gray-100 shadow-sm hover:shadow-md rounded-xl p-5 w-32 h-32 transition-transform transform hover:-translate-y-1 cursor-pointer"
+            >
+              {/* Emoji Icon */}
+              <div className="text-4xl mb-3">{place.emoji}</div>
+
+              {/* City Name */}
+              <p className="text-sm md:text-base font-medium text-gray-700 text-center">
+                {place.name}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+<AdmissionAndStudyAbroad/>
+<OurOffices/>
+         
         <NewsletterSection />
       </section>
     </>
